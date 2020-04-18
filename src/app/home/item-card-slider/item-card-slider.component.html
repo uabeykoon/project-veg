@@ -1,46 +1,68 @@
+<div class="row" style="margin-top: 20px;">
+  <div class="col-md-12">
+    <section class="text-center pb-1 my-1">
+      <!--Section heading-->
+      <h2 class="h1 ">Vegitables</h2>
+      <!--Section description-->
+      <p class="grey-text pb-1">Special discount packages</p>
+    </section>
+  </div>
+
+</div>
+
+<div class="row" style="margin-top: 20px;">
 <mdb-carousel [isControls]="false" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
               [animation]="'slide'">
   <mdb-carousel-item *ngFor="let item of slides; let i = index">
     <div [class]="size" *ngFor="let card of item; let cardIndex = index" [ngClass]="{make:onc}">
       <!-- Card -->
-      <mdb-card>
-        <div class="view rgba-white-slight waves-light" mdbWavesEffect   style=" max-height: 180px;">
-          <!-- Card img -->
-          <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
-          <a>
-            <div class="mask"></div>
-          </a>
-        </div>
-        <!--Card content-->
-        <mdb-card-body>
-          <!--Title-->
-          <mdb-card-title>
-            <h4>{{card.title}}</h4>
-          </mdb-card-title>
+      <!-- product package pannel -->
+<mdb-card>
+  <mdb-card-body>
+    
+<!-- Card deck -->
+<!-- <div>
+  
+  <div> -->
+    <!-- Card Light -->
+    <div class="card">
 
-          <!--Text-->
-          <mdb-card-text> {{card.description}}
-          </mdb-card-text>
-          <!-- <div class="container">
-            <div class="row">
-              <div class="col-md-4">a</div>
-              <div class="col-md-4">a</div>
-              <div class="col-md-4">a</div>
-            </div>
-          </div> -->
+      <!-- Card image -->
+      <div class="view overlay">
+        <img class="card-img-top img-responsive"
+          [src]="card.img"
+          style="max-height: 150px;">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
 
-          <!-- <a href="#" mdbBtn class="warning-color-dark" mdbWavesEffect style="width: auto;">Button</a> -->
-          
-          <div class="row" style="padding: 20px;">
-            <div class="col-md-10" style="padding: 20px;background-color: #FF8800; color: white;">ADD TO CART <mdb-icon fas icon="cart-plus"></mdb-icon></div>
-            
-          </div>
+      <!-- Card content -->
+      <div class="card-body ">
 
+        <!-- Title -->
+        <h4 class="card-title green-text">{{card.package}}</h4>
+        <p class="card-title">{{card.price}}</p>
+        <hr class="warning-color">
+        <!-- Text -->
+        <p class="card-text">{{card.description}}</p>
+        <!-- Link -->
+        <a href="#!" class="black-text d-flex justify-content-end">
+          <h5 class="text-success">View more <i class="fas fa-angle-double-right"></i></h5>
+        </a>
+      </div>
+      
+    </div>
+    <!-- Card Light -->
+  <!-- </div>
 
-          
-        </mdb-card-body>
-      </mdb-card>
+</div> -->
+<!-- Card deck -->
+
+</mdb-card-body>
+</mdb-card>
       <!-- Card -->
     </div>
   </mdb-carousel-item>
 </mdb-carousel>
+</div>

@@ -49,7 +49,7 @@ export class ItemCardSliderComponent implements OnInit {
       title: 'Card Title 3',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
-      img: 'https://image.freepik.com/free-photo/snake-gourd-white-background_62856-2496.jpg'
+      img: 'https://www.onlyfoods.net/wp-content/uploads/2017/03/Snake-Gourd.jpg'
     },
     {
       title: 'Card Title 4',
@@ -61,7 +61,7 @@ export class ItemCardSliderComponent implements OnInit {
       title: 'Card Title 5',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
-      img: 'https://image.freepik.com/free-photo/snake-gourd-white-background_62856-2496.jpg'
+      img: 'https://www.onlyfoods.net/wp-content/uploads/2017/03/Snake-Gourd.jpg'
     },
     {
       title: 'Card Title 6',
@@ -81,12 +81,7 @@ export class ItemCardSliderComponent implements OnInit {
       buttonText: 'Button',
       img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
     },
-    {
-      title: 'Card Title 9',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
+    
   ];
   slides: any = [[]];
   chunk(arr, chunkSize) {
