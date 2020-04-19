@@ -72,7 +72,7 @@ export class AllProductsComponent implements OnInit {
         focus: true,
         show: false,
         ignoreBackdropClick: false,
-        class:'modal-dialog modal-sm',
+        class:'modal-dialog modal-md',
         containerClass: 'modal fade bottom',
         role:'document',
         animated: true,

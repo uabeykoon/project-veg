@@ -35,13 +35,18 @@ export class ProductPopupModalComponent implements OnInit {
   }
 
   onPlusClick(){
+    
     this.weight=this.weight+100;
     this.totalPrice = this.unitPrice*(this.weight/100);
+    
+
   }
 
   onMinusClick(){
+    if(this.weight>200){
     this.weight=this.weight-100;
     this.totalPrice = this.unitPrice*(this.weight/100);
+    }
   }
 
   ngOnInit(){}
