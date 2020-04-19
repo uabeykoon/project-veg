@@ -12,4 +12,10 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  elements: any = [
+    {id: 1, img: 'photo' ,name: 'Carrot', quantity: '250 g', price: 'Rs.120/=', remove: 'x'},
+  ];
+
+  headElements = ['ID', 'Product View' ,'Product Name', 'Quantity', 'Price','Remove'];
+
 }
