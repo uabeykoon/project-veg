@@ -1,24 +1,25 @@
-<div class="row" style="margin-top: 20px;">
+<div class="row" style="margin-top: 50px;">
   <div class="col-md-12">
-    <section class="text-center pb-1 my-1">
+    <section class="text-center pb-1 my-0">
       <!--Section heading-->
-      <h2 class="h1 ">Header</h2>
+      <h2 class="h1 ">Products On the Market</h2>
       <!--Section description-->
-      <p class="grey-text pb-1">Special discount packages</p>
+      <!-- <p class="grey-text pb-1">Special discount packages</p> -->
     </section>
   </div>
 
 </div>
 
-<div class="row" style="margin-top: 20px;">
+<div class="row" style="margin-top: 5px;">
+  <mdb-card>
+    <mdb-card-body>
 <mdb-carousel [isControls]="false" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
               [animation]="'slide'">
   <mdb-carousel-item *ngFor="let item of slides; let i = index">
     <div [class]="size" *ngFor="let card of item; let cardIndex = index" [ngClass]="{make:onc}">
       <!-- Card -->
       <!-- product package pannel -->
-<mdb-card>
-  <mdb-card-body>
+
     
 <!-- Card deck -->
 <!-- <div>
@@ -59,10 +60,10 @@
 </div> -->
 <!-- Card deck -->
 
-</mdb-card-body>
-</mdb-card>
       <!-- Card -->
     </div>
   </mdb-carousel-item>
 </mdb-carousel>
+</mdb-card-body>
+</mdb-card>
 </div>
