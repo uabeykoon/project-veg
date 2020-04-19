@@ -6,8 +6,6 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { FeaturedPackComponent } from './featured-pack/featured-pack.component';
 import { ContantUsComponent } from './contant-us/contant-us.component';
 
-
-
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'allproducts',component:AllProductsComponent},
