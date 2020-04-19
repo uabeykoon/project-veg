@@ -9,7 +9,7 @@ import { ContantUsComponent } from './contant-us/contant-us.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'allproducts',component:AllProductsComponent},
-  {path:'featuredpack',component:FeaturedPackComponent},
+  {path:'featuredpacks',component:FeaturedPackComponent},
   {path:'contactus',component:ContantUsComponent}
 ];
 

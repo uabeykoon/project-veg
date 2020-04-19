@@ -12,6 +12,9 @@ import { ContantUsComponent } from './contant-us/contant-us.component';
 import { FeaturedPackComponent } from './featured-pack/featured-pack.component';
 import { BannerSliderComponent } from './home/banner-slider/banner-slider.component';
 import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slider.component';
+import { FeaturedPackCardSliderComponent } from './home/featured-pack-card-slider/featured-pack-card-slider.component';
+import { ProductPopupModalComponent } from './all-products/product-popup-modal/product-popup-modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,14 +25,18 @@ import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slide
     ContantUsComponent,
     FeaturedPackComponent,
     BannerSliderComponent,
-    ItemCardSliderComponent
+    ItemCardSliderComponent,
+    FeaturedPackCardSliderComponent,
+    ProductPopupModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
+  entryComponents:[ProductPopupModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

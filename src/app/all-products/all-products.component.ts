@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { ProductPopupModalComponent } from './product-popup-modal/product-popup-modal.component';
 
 @Component({
   selector: 'app-all-products',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-products.component.scss']
 })
 export class AllProductsComponent implements OnInit {
+
 
   constructor() { }
 
@@ -27,6 +30,9 @@ export class AllProductsComponent implements OnInit {
     //   this.onc=false;
     // }
   }
+
+  
+
 
   cards = [
     {

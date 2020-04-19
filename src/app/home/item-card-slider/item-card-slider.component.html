@@ -2,9 +2,16 @@
   <div class="col-md-12">
     <section class="text-center pb-1 my-0">
       <!--Section heading-->
+
       <h2 class="h1 ">Products On the Market</h2>
       <!--Section description-->
       <!-- <p class="grey-text pb-1">Special discount packages</p> -->
+
+      <h2 class="h1 ">Vegetables</h2>
+      <!--Section description-->
+      <p class="grey-text pb-1">Special discount packages</p>
+      <hr>
+
     </section>
   </div>
 
@@ -32,7 +39,7 @@
       <div class="view overlay">
         <img class="card-img-top img-responsive"
           [src]="card.img"
-          style="max-height: 150px;">
+          style="max-height: 120px;">
         <a>
           <div class="mask rgba-white-slight"></div>
         </a>
@@ -48,7 +55,7 @@
         <!-- Text -->
         <p class="card-text">{{card.description}}</p>
         <!-- Link -->
-        <a href="#!" class="black-text d-flex justify-content-end">
+        <a (click)="onViewMoreClicked()" class="black-text d-flex justify-content-end">
           <h5 class="text-success">View more <i class="fas fa-angle-double-right"></i></h5>
         </a>
       </div>

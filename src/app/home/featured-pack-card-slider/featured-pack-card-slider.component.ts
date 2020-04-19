@@ -1,13 +1,12 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-item-card-slider',
-  templateUrl: './item-card-slider.component.html',
-  styleUrls: ['./item-card-slider.component.scss']
+  selector: 'app-featured-pack-card-slider',
+  templateUrl: './featured-pack-card-slider.component.html',
+  styleUrls: ['./featured-pack-card-slider.component.scss']
 })
-export class ItemCardSliderComponent implements OnInit {
+export class FeaturedPackCardSliderComponent implements OnInit {
 
   size :any = "col-md-3 pb-2";
 
@@ -15,6 +14,12 @@ export class ItemCardSliderComponent implements OnInit {
   x:any;
 
   onc = false;
+  
+
+  
+
+  
+
 
   title = 'ggg';
 
@@ -32,57 +37,49 @@ export class ItemCardSliderComponent implements OnInit {
 
   cards = [
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 1',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://image.freepik.com/free-photo/bunch-fresh-carrots-white-background_52720-62.jpg'
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 2',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://images.assetsdelivery.com/compings_v2/buriy/buriy1408/buriy140800037.jpg'
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 3',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://www.onlyfoods.net/wp-content/uploads/2017/03/Snake-Gourd.jpg'
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 4',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://media.istockphoto.com/photos/potatoes-isolated-on-white-background-picture-id952980244?k=6&m=952980244&s=170667a&w=0&h=bLd5BHFNRW7_A1zvU_VtXs3xjEyxC4MpWXOKwDVtTsQ='
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 5',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://www.onlyfoods.net/wp-content/uploads/2017/03/Snake-Gourd.jpg'
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 6',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://image.freepik.com/free-photo/bitter-melon-bitter-gourd-white-background_35378-1252.jpg'
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 7',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
     },
     {
-      package: 'Carrot',
-      price: 'Rs.150',
+      title: 'Card Title 8',
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Button',
       img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
@@ -131,7 +128,7 @@ export class ItemCardSliderComponent implements OnInit {
 
 //navigate to all products by clicking on view more
 onViewMoreClicked(){
-  this.router.navigate(['/allproducts']);
+  this.router.navigate(['/featuredpacks']);
 }
 
 }
