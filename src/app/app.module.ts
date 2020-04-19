@@ -17,7 +17,8 @@ import { ProductPopupModalComponent } from './all-products/product-popup-modal/p
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { FloatBtnComponent } from './home/float-btn/float-btn.component';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatBadgeModule} from '@angular/material/badge';  
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatButtonModule} from '@angular/material/button';
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule
     
   ],
   entryComponents:[ProductPopupModalComponent],
