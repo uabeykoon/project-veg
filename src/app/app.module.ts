@@ -15,6 +15,8 @@ import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slide
 import { FeaturedPackCardSliderComponent } from './home/featured-pack-card-slider/featured-pack-card-slider.component';
 import { ProductPopupModalComponent } from './all-products/product-popup-modal/product-popup-modal.component';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { FloatBtnComponent } from './home/float-btn/float-btn.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FormsModule } from '@angular/forms';
     BannerSliderComponent,
     ItemCardSliderComponent,
     FeaturedPackCardSliderComponent,
-    ProductPopupModalComponent
+    ProductPopupModalComponent,
+    CartComponent,
+    FloatBtnComponent
   ],
   imports: [
     BrowserModule,
