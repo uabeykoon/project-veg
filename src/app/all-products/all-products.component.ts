@@ -9,8 +9,10 @@ import { ProductPopupModalComponent } from './product-popup-modal/product-popup-
 })
 export class AllProductsComponent implements OnInit {
 
+  pp='';
+  modalRef: MDBModalRef;
 
-  constructor() { }
+  constructor(private modalService: MDBModalService) { }
 
   size :any = "col-md-3 pb-2";
 
@@ -19,17 +21,7 @@ export class AllProductsComponent implements OnInit {
 
   onc = false;
 
-  ngOnInit() {
-    // this.innerWidth = window.innerWidth;
-    // if(this.innerWidth<500){
-    //   this.slides = this.chunk(this.cards, 1);
-    //   this.onc=true;
-    // }
-    // if(this.innerWidth>=500){
-    //   this.slides = this.chunk(this.cards, 4);
-    //   this.onc=false;
-    // }
-  }
+  
 
   
 
@@ -66,7 +58,41 @@ export class AllProductsComponent implements OnInit {
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Add to Cart',
       img: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/powerhouse_vegetables_slideshow/650x350_powerhouse_vegetables_slideshow.jpg'
-    },]
+    },];
+
+
+
+
+
+
+    openModal() {
+      this.modalRef = this.modalService.show(ProductPopupModalComponent, { 
+        backdrop: true,
+        keyboard: true,
+        focus: true,
+        show: false,
+        ignoreBackdropClick: false,
+        class:'modal-dialog modal-sm',
+        containerClass: 'modal fade bottom',
+        role:'document',
+        animated: true,
+        data: {
+            heading: 'Modal heading',
+            content: { heading: 'Content heading', description: 'Content description'}
+        } });
+  
+        this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });
+  
+  
+        
+    }
+  
+    ngOnInit() {
+      this.modalService.open.subscribe(() => console.log('open'));
+      this.modalService.opened.subscribe(() => console.log('opened'));
+      this.modalService.close.subscribe(() => console.log('close'));
+      this.modalService.closed.subscribe(() => console.log('closed'));
+    }
 
   
 
