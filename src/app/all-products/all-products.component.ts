@@ -77,7 +77,7 @@ export class AllProductsComponent implements OnInit {
         role:'document',
         animated: true,
         data: {
-            heading: 'Modal heading',
+            heading: 'Add to cart Confirmation',
             content: { heading: 'Content heading', description: 'Content description'}
         } });
   

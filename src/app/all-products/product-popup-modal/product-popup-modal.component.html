@@ -1,9 +1,9 @@
-<div mdb-card class="modal-content">
+<div mdb-card class="modal-content container">
     <div class="modal-header">
       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
         <span aria-hidden="true">×</span>
       </button>
-      <h4 class="modal-title w-100" id="myModalLabel">{{ heading }}</h4>
+      <h2 class="modal-title w-100" id="myModalLabel">{{ heading }}</h2>
     </div>
     <!-- <div class="modal-body">
       <h5>{{ content.heading }}</h5>
@@ -17,14 +17,14 @@
 
 
     
-        <mdb-card-body>
+        <!-- <mdb-card-body> -->
           
       <!-- Card deck -->
       <!-- <div>
         
         <div> -->
           <!-- Card Light -->
-          <div class="card">
+          <!-- <div class="card"> -->
       
             <!-- Card image -->
             <div class="view overlay">
@@ -40,25 +40,56 @@
             <div class="card-body ">
       
               <!-- Title -->
-              <h4 class="card-title green-text">ssssss</h4>
-              <p class="card-title">ssssssssssss</p>
+              <h1 class="card-title green-text"  style="font-weight: 100;">Carrot</h1>
               <hr class="warning-color">
+              <!-- <p class="card-title">ssssssssssss</p> -->
+              
+                  <div class="row">
+                    <div class="col-4" style="text-align: center;">
+                      <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon" (click)="onMinusClick()">
+                        <mdb-icon fas icon="minus" style="color: white;"></mdb-icon>
+                      </button>
+                    </div>
+
+                    <div class="col-4" style="text-align: center;"><h3 style="font-weight: 500;">{{weight}} g</h3></div>
+
+                    <div class="col-4" style="align-content: center;">
+                      <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon" (click)="onPlusClick()">
+                        <mdb-icon fas icon="plus" style="color: white;"></mdb-icon>
+                      </button>
+                    </div>
+                  
+                  </div>
+
+                  <div class="row danger-color" style="margin-top: 10px; text-align: justify;color: white;" >
+                    <div class="col-6">
+                      <p>Total Price</p>
+                    </div>
+
+                    <div class="col-2">
+                      <p> = </p>
+                    </div>
+
+                    <div class="col-4">
+                      <p>Rs {{totalPrice}} /=</p>
+                    </div>
+                  </div>
+              
+             
+
+              
               <!-- Text -->
-              <p class="card-text">sssssssssssssss</p>
-              <!-- Link -->
-              <a class="black-text d-flex justify-content-end">
-                <h5 class="text-success">View more <i class="fas fa-angle-double-right"></i></h5>
-              </a>
+              
             </div>
             
-          </div>
+          <!-- </div> -->
           <!-- Card Light -->
         <!-- </div>
       
       </div> -->
       <!-- Card deck -->
       
-      </mdb-card-body>
+      <!-- </mdb-card-body> -->
       
 
 

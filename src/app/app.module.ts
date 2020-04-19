@@ -15,6 +15,7 @@ import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slide
 import { FeaturedPackCardSliderComponent } from './home/featured-pack-card-slider/featured-pack-card-slider.component';
 import { ProductPopupModalComponent } from './all-products/product-popup-modal/product-popup-modal.component';
 import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button'; 
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
+    
   ],
   entryComponents:[ProductPopupModalComponent],
   providers: [],

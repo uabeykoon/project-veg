@@ -13,6 +13,11 @@ export class ProductPopupModalComponent implements OnInit {
   content: any;
   abc='';
 
+  weight = 200;
+  unitPrice = 60;
+
+  totalPrice = this.unitPrice*(this.weight/100);
+
   action = new Subject();
 
   constructor(public modalRef: MDBModalRef) {}
@@ -27,6 +32,16 @@ export class ProductPopupModalComponent implements OnInit {
 
   onNoClick() {
       this.action.next('No');
+  }
+
+  onPlusClick(){
+    this.weight=this.weight+100;
+    this.totalPrice = this.unitPrice*(this.weight/100);
+  }
+
+  onMinusClick(){
+    this.weight=this.weight-100;
+    this.totalPrice = this.unitPrice*(this.weight/100);
   }
 
   ngOnInit(){}
