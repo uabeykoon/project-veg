@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { ProductPopupModalComponent } from './product-popup-modal/product-popup-modal.component';
 import { ProductsService } from '../shared/services/products.service';
 import { Products } from '../shared/products.models';
 
+
 @Component({
   selector: 'app-all-products',
   templateUrl: './all-products.component.html',
   styleUrls: ['./all-products.component.scss'],
-  providers:[ProductsService]
+  
 })
 export class AllProductsComponent implements OnInit {
+  
 
 
   cards:Products[];
@@ -56,7 +58,7 @@ export class AllProductsComponent implements OnInit {
             content: { heading: 'Content heading', description: 'Content description',productID:productID,productName:productName,unitPrice:unitPrice,imgSrc:imgSrc}
         } });
   
-        this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });
+        this.modalRef.content.action.subscribe( (result: any) => { console.log(result) });
   
   
         

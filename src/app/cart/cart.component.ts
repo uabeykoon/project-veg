@@ -1,20 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../shared/services/cart.service';
+import { Cart } from '../shared/cart.model';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
+  
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cartItems:Cart[]=[];
+  totalAmount:number=0;
 
-  ngOnInit(): void {
+  constructor(private cartService : CartService) { }
+
+  ngOnInit(){
+    this.cartItems = this.cartService.getItems();
+
+    for(var x=0; x<this.cartItems.length; x++){
+      this.totalAmount=this.totalAmount+this.cartItems[x].totalAmountPerItem;
+    }
+  
   }
-
-  elements: any = [
-    {id: 1, img: 'photo' ,name: 'Carrot', quantity: '250 g', price: 'Rs.120/=', remove: 'x'},
-  ];
 
   headElements = ['ID', 'Product View' ,'Product Name', 'Quantity', 'Price','Remove'];
 

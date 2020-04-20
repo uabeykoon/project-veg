@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { Products } from 'src/app/shared/products.models';
+import { CartService } from 'src/app/shared/services/cart.service';
+
 
 @Component({
   selector: 'app-product-popup-modal',
@@ -11,7 +13,7 @@ import { Products } from 'src/app/shared/products.models';
  
 })
 export class ProductPopupModalComponent implements OnInit {
- 
+  y:any;
   //details tht parsing from component
     heading: string;
     content: any;
@@ -29,7 +31,7 @@ export class ProductPopupModalComponent implements OnInit {
   action = new Subject();
 
   constructor(public modalRef: MDBModalRef,
-              ) {}
+              private cartService:CartService) {}
 
   
 
@@ -47,6 +49,7 @@ export class ProductPopupModalComponent implements OnInit {
     
     this.weight=this.weight+100;
     this.totalPrice = this.unitPrice*(this.weight/100);
+
     
 
   }
@@ -56,7 +59,15 @@ export class ProductPopupModalComponent implements OnInit {
     this.weight=this.weight-100;
     this.totalPrice = this.unitPrice*(this.weight/100);
     
+    
     }
+  }
+
+
+  onClickAddToCart(){
+    this.cartService.addItems(this.content.productID,null,this.weight,this.totalPrice);
+    this.modalRef.hide();
+    
   }
 
   ngOnInit(){

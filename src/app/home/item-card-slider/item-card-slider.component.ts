@@ -7,8 +7,8 @@ import { ProductsService } from 'src/app/shared/services/products.service';
 @Component({
   selector: 'app-item-card-slider',
   templateUrl: './item-card-slider.component.html',
-  styleUrls: ['./item-card-slider.component.scss'],
-  providers:[ProductsService]
+  styleUrls: ['./item-card-slider.component.scss']
+ 
 })
 export class ItemCardSliderComponent implements OnInit {
 

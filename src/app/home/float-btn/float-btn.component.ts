@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-float-btn',
@@ -9,13 +10,22 @@ import { Router } from '@angular/router';
 })
 export class FloatBtnComponent implements OnInit {
 
-  constructor(private router :Router){}
+  notificationCount = 0;
+
+  constructor(private router :Router,
+              private cartService :CartService){
+                this.cartService.onAdded.subscribe(
+                (newcount:number)=>{this.notificationCount=newcount;}
+                );
+              }
 
   ngOnInit(): void {
+    this.notificationCount=this.cartService.getNumberOfElement();
   }
 
   onbtnClicked(){
     this.router.navigate(['/cartview']);
+    
   }
 
 }
