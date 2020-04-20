@@ -15,20 +15,26 @@
             <div class="row">
               <div class="col-md-3 mx-auto my-4" *ngFor="let card of cards">
                 <mdb-card>
-                  <mdb-card-img [src]="card.img" alt="Card image cap">
-                  </mdb-card-img>
+                  <div class="view overlay">
+                    <img class="card-img-top img-responsive"
+                      [src]="card.imgSrc"
+                      style="max-height: 170px;">
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
                   <mdb-card-body>
+
                     <mdb-card-title class="text-center">
-                      <h4>{{card.title}}</h4>
+                      <h4>{{card.productName}}</h4>
                       <hr class="warning-color">
                     </mdb-card-title>
-                    <h4 class="text-center">{{card.quantity}} / {{card.price}}</h4>
+                    
+                    <h4 class="text-center">100g / Rs {{card.unitPrice}}/=</h4>
                     <hr class="warning-color">
-                    <mdb-card-text>
-                      {{card.description}}
-                    </mdb-card-text>
+                    
           
-                    <button mdbBtn color="success" rounded="true" (click) = "openModal()">ADD TO CART   <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
+                    <button mdbBtn color="success" rounded="true" (click) = "openModal(card.productID,card.productName,card.unitPrice,card.imgSrc)">ADD TO CART   <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
                   </mdb-card-body>
                 </mdb-card>
               </div>

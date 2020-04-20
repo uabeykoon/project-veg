@@ -29,8 +29,8 @@
             <!-- Card image -->
             <div class="view overlay">
               <img class="card-img-top img-responsive"
-                src="https://www.onlyfoods.net/wp-content/uploads/2017/03/Snake-Gourd.jpg"
-                style="max-height: 250px;">
+                [src]="content.imgSrc"
+                style="max-height: 300px;">
               <a>
                 <div class="mask rgba-white-slight"></div>
               </a>
@@ -40,7 +40,7 @@
             <div class="card-body ">
       
               <!-- Title -->
-              <h1 class="card-title green-text"  style="font-weight: 100;">Carrot</h1>
+              <h1 class="card-title green-text"  style="font-weight: 100;">{{content.productName}}</h1>
               <hr class="warning-color">
               <!-- <p class="card-title">ssssssssssss</p> -->
               
