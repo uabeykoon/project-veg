@@ -4,7 +4,6 @@ import { ProductPopupModalComponent } from './product-popup-modal/product-popup-
 import { ProductsService } from '../shared/services/products.service';
 import { Products } from '../shared/products.models';
 
-
 @Component({
   selector: 'app-all-products',
   templateUrl: './all-products.component.html',
@@ -13,8 +12,6 @@ import { Products } from '../shared/products.models';
 })
 export class AllProductsComponent implements OnInit {
   
-
-
   cards:Products[];
 
   pp='';
@@ -29,18 +26,6 @@ export class AllProductsComponent implements OnInit {
   x:any;
 
   onc = false;
-
-  
-
-  
-
-
-  
-
-
-
-
-
 
     openModal(productID,productName,unitPrice,imgSrc) {
       this.modalRef = this.modalService.show(ProductPopupModalComponent, { 
@@ -60,8 +45,6 @@ export class AllProductsComponent implements OnInit {
   
         this.modalRef.content.action.subscribe( (result: any) => { console.log(result) });
   
-  
-        
     }
   
     ngOnInit() {

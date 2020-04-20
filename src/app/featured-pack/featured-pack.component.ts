@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { PackPopupModalComponent } from './pack-popup-modal/pack-popup-modal.component';
 
 @Component({
   selector: 'app-featured-pack',
@@ -7,10 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturedPackComponent implements OnInit {
 
-  constructor() { }
+  pp='';
+  modalRef: MDBModalRef;
+
+  constructor(private modalService: MDBModalService) { }
 
   ngOnInit(): void {
   }
+
+  openPackageModal() {
+    this.modalRef = this.modalService.show(PackPopupModalComponent, { 
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: false,
+      class:'modal-dialog modal-md',
+      containerClass: 'modal fade bottom',
+      role:'document',
+      animated: true,
+      data: {
+          heading: 'Add to cart Confirmation',
+          content: { heading: 'Content heading', description: 'Content description'}
+      } });
+
+      this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });
+
+      
+  }
+
+
 
   cards = [
     {

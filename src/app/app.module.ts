@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';  
 import { ProductsService } from './shared/services/products.service';
 import { CartService } from './shared/services/cart.service';
+import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CartService } from './shared/services/cart.service';
     FeaturedPackCardSliderComponent,
     ProductPopupModalComponent,
     CartComponent,
-    FloatBtnComponent
+    FloatBtnComponent,
+    PackPopupModalComponent
   ],
   imports: [
     BrowserModule,
