@@ -18,7 +18,7 @@ export class FeaturedPackComponent implements OnInit {
   constructor(private modalService: MDBModalService,
               private packageService: PackagesService) { }
 
-  openPackageModal(packageId,packageName,price,packageDescription) {
+  openPackageModal(packageID,packageName,price,packageDescription) {
     this.modalRef = this.modalService.show(PackPopupModalComponent, { 
       backdrop: true,
       keyboard: true,
@@ -31,7 +31,7 @@ export class FeaturedPackComponent implements OnInit {
       animated: true,
       data: {
           heading: 'Add to cart Confirmation',
-          content: { heading: 'Content heading', description: 'Content description',packageId:packageId ,packageName:packageName,price:price,packageDescription:packageDescription}
+          content: { heading: 'Content heading', description: 'Content description',packageID:packageID ,packageName:packageName,price:price,packageDescription:packageDescription}
       } });
 
       this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });

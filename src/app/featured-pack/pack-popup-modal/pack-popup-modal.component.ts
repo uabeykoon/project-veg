@@ -24,8 +24,10 @@ export class PackPopupModalComponent implements OnInit {
   }
 
   onClickConfirm(){
-    this.cartService.addPackages(this.content.packageId,null,this.weight,this.content.price);
+    this.cartService.addPackages(this.content.packageID,this.weight,this.content.price);
     this.modalRef.hide();
+    
+    
   }
 
 }

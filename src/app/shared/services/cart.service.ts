@@ -12,6 +12,7 @@ export class CartService{
 
     cartID:string;
     productName:string;
+    packageName:string;
     imgSrc:string;
 
     constructor(private productService:ProductsService, private packageService:PackagesService){}
@@ -19,20 +20,21 @@ export class CartService{
     cart:Cart[]= [];
 
 
-    addItems(productID,packID,weight,totalAmountPerItem){
+    addItems(productID,weight,totalAmountPerItem){
         this.cartID='001';
         this.productName = this.productService.getProduct(productID).productName;
         this.imgSrc = this.productService.getProduct(productID).imgSrc;
-        this.cart.push(new Cart(this.cartID,productID,this.productName,this.imgSrc,packID,weight,totalAmountPerItem));
+        this.cart.push(new Cart(this.cartID,productID,this.productName,this.imgSrc,null,weight,totalAmountPerItem));
         this.onAdded.emit(this.getNumberOfElement());
     }
 
-    addPackages(packageId,packID,weight,price){
+    addPackages(packID,weight,price){
         this.cartID = '001';
-        this.productName = this.packageService.getPackage(packageId).packageDescription;
-        this.imgSrc = this.packageService.getPackage(packageId).imgSrc;
-        this.cart.push(new Cart(this.cartID, packageId,this.productName,this.imgSrc,packID,weight,price));
+        this.packageName=this.packageService.getPackage(packID).packageName;
+        this.imgSrc=this.packageService.getPackage(packID).imgSrc;
+        this.cart.push(new Cart(this.cartID,null,this.packageName,this.imgSrc,packID,weight,price));
         this.onAdded.emit(this.getNumberOfElement());
+       
     }
 
     getItems(){

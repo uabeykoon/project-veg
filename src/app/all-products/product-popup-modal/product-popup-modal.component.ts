@@ -65,7 +65,7 @@ export class ProductPopupModalComponent implements OnInit {
 
 
   onClickAddToCart(){
-    this.cartService.addItems(this.content.productID,null,this.weight,this.totalPrice);
+    this.cartService.addItems(this.content.productID,this.weight,this.totalPrice);
     this.modalRef.hide();
     
   }
