@@ -14,6 +14,7 @@ export class CartService{
     productName:string;
     packageName:string;
     imgSrc:string;
+    isPack:string;
 
     constructor(private productService:ProductsService, private packageService:PackagesService){}
 
@@ -22,17 +23,19 @@ export class CartService{
 
     addItems(productID,weight,totalAmountPerItem){
         this.cartID='001';
+        this.isPack='p';
         this.productName = this.productService.getProduct(productID).productName;
         this.imgSrc = this.productService.getProduct(productID).imgSrc;
-        this.cart.push(new Cart(this.cartID,productID,this.productName,this.imgSrc,null,weight,totalAmountPerItem));
+        this.cart.push(new Cart(this.cartID,productID,this.productName,this.imgSrc,weight,totalAmountPerItem,this.isPack));
         this.onAdded.emit(this.getNumberOfElement());
     }
 
     addPackages(packID,weight,price){
         this.cartID = '001';
+        this.isPack='f';
         this.packageName=this.packageService.getPackage(packID).packageName;
         this.imgSrc=this.packageService.getPackage(packID).imgSrc;
-        this.cart.push(new Cart(this.cartID,null,this.packageName,this.imgSrc,packID,weight,price));
+        this.cart.push(new Cart(this.cartID,packID,this.packageName,this.imgSrc,weight,price,this.isPack));
         this.onAdded.emit(this.getNumberOfElement());
        
     }

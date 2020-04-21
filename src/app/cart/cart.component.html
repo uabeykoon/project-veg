@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <tr mdbTableCol *ngFor="let item of cartItems">
-      <th scope="row">{{item.productID}}</th>
+      <th scope="row">{{item.isPack}}</th>
       <td><img [src]="item.imgSrc" class="img-responsive size"></td>
       <td>{{item.productName}}</td>
       <td>{{item.weight}}g</td>
