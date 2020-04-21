@@ -25,6 +25,7 @@ import { PackagesService } from './shared/services/packages.service';
 import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
 
 import { PackageDescriptionService } from './shared/services/package-description.service';
+import { UserPackComponent } from './user-pack/user-pack.component';
 
 
 
@@ -44,6 +45,7 @@ import { PackageDescriptionService } from './shared/services/package-description
     CartComponent,
     FloatBtnComponent,
     PackPopupModalComponent,
+    UserPackComponent,
  
   ],
   imports: [
