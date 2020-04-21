@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -24,6 +23,7 @@ import { ProductsService } from './shared/services/products.service';
 import { CartService } from './shared/services/cart.service';
 import { PackagesService } from './shared/services/packages.service';
 import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
+import { PackageDescriptionService } from './shared/services/package-description.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-p
     
   ],
   entryComponents:[ProductPopupModalComponent],
-  providers: [ProductsService,CartService,PackagesService],
+  providers: [ProductsService,CartService,PackagesService,PackageDescriptionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
