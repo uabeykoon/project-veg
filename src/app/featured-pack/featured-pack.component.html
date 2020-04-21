@@ -15,16 +15,17 @@
             <div class="row">
               <div class="col-md-3 mx-auto my-4" *ngFor="let card of cards">
                 <mdb-card>
-                  <mdb-card-img [src]="card.img" alt="Card image cap">
+                  <mdb-card-img [src]="card.imgSrc" alt="Card image cap">
                   </mdb-card-img>
                   <mdb-card-body>
                     <mdb-card-title>
-                      <h4>{{card.title}}</h4>
+                      <h4>{{card.packageName}}</h4>
+                      <hr class="warning-color">
                     </mdb-card-title>
-                    <h4>{{card.price}}</h4>
+                    <h4>Rs. {{card.price}} /=</h4>
           
                     <mdb-card-text>
-                      {{card.description}}
+                      {{card.packageDescription}}
                     </mdb-card-text>
           
                     <button mdbBtn color="success" (click) = "openPackageModal()">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>

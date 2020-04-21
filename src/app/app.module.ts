@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -21,6 +22,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';  
 import { ProductsService } from './shared/services/products.service';
 import { CartService } from './shared/services/cart.service';
+import { PackagesService } from './shared/services/packages.service';
 import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
 
 @NgModule({
@@ -37,7 +39,7 @@ import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-p
     ProductPopupModalComponent,
     CartComponent,
     FloatBtnComponent,
-    PackPopupModalComponent
+    PackPopupModalComponent 
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,7 @@ import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-p
     
   ],
   entryComponents:[ProductPopupModalComponent],
-  providers: [ProductsService,CartService],
+  providers: [ProductsService,CartService,PackagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
