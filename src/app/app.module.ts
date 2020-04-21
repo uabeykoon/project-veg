@@ -23,7 +23,11 @@ import { ProductsService } from './shared/services/products.service';
 import { CartService } from './shared/services/cart.service';
 import { PackagesService } from './shared/services/packages.service';
 import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
+
 import { PackageDescriptionService } from './shared/services/package-description.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { PackageDescriptionService } from './shared/services/package-description
     ProductPopupModalComponent,
     CartComponent,
     FloatBtnComponent,
-    PackPopupModalComponent 
+    PackPopupModalComponent,
+ 
   ],
   imports: [
     BrowserModule,
