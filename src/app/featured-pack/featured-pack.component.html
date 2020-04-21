@@ -28,7 +28,7 @@
                       {{card.packageDescription}}
                     </mdb-card-text>
           
-                    <button mdbBtn color="success" (click) = "openPackageModal()">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
+                    <button mdbBtn color="success" (click) = "openPackageModal(card.packageId, card.packageName,card.price,card.packageDescription)">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
                   </mdb-card-body>
                 </mdb-card>
               </div>
