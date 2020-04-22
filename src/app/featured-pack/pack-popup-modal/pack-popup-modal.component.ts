@@ -1,3 +1,4 @@
+// import { PackageDescriptionService } from './../../shared/services/package-description.service';
 import { Component, OnInit } from '@angular/core';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { CartService } from 'src/app/shared/services/cart.service';
@@ -9,7 +10,8 @@ import { CartService } from 'src/app/shared/services/cart.service';
 })
 export class PackPopupModalComponent implements OnInit {
 
-  constructor(public modalRef: MDBModalRef, private cartService:CartService
+  constructor(public modalRef: MDBModalRef, private cartService:CartService, 
+    // private packageDescriptionService:PackageDescriptionService
     ) {}
 
     heading: string;
@@ -26,6 +28,7 @@ export class PackPopupModalComponent implements OnInit {
   onClickConfirm(){
     this.cartService.addPackages(this.content.packageID,this.weight,this.content.price);
     this.modalRef.hide();
+    
     
     
   }
