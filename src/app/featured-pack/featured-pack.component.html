@@ -25,7 +25,15 @@
                     <h4>Rs. {{card.price}} /=</h4>
           
                     <mdb-card-text>
-                      <!-- {{cardsDes[i].packageDescription}} -->
+                      <div class="container">
+                        <div class="row" *ngFor="let item of cardsDes | packageDescriptionPipe:card.packageID">
+                          <div class="col-md-6">{{item.productID}}</div>
+                          <div class="col-md-6">{{item.quantity}}</div>
+                        </div>
+                      </div>
+                        
+                        
+                      
                       
                     </mdb-card-text>
           

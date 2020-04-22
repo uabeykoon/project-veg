@@ -50,21 +50,20 @@ export class FeaturedPackComponent implements OnInit {
     this.cards = this.packageService.getProducts();
     this.cardsDes = this.packageDescriptionService.getPackagesDescriptions();
 
-    let numberOfArrays = this.cards.length;
-    console.log(this.cardsDes);
+    
 
     // let x =[4,3,3,5,6,9,4];
+    
 
     this.result = this.cardsDes.filter((pack)=>{return pack.packageID==='101'});
     console.log(this.result);
 
 
     
+    
 
-
-    // for(let i = 0;numberOfArrays;i++){
-    //   let abc :PackageDescription[] = [];
-    // }
+    
+      
 
 
   
