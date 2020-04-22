@@ -13,7 +13,7 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-md-3 mx-auto my-4" *ngFor="let card of cards">
+              <div class="col-md-3 mx-auto my-4" *ngFor="let card of cards ; let i = index ">
                 <mdb-card>
                   <mdb-card-img [src]="card.imgSrc" alt="Card image cap">
                   </mdb-card-img>
@@ -25,10 +25,11 @@
                     <h4>Rs. {{card.price}} /=</h4>
           
                     <mdb-card-text>
-                      {{card.packageDescription}}
+                      {{cardsDes[i].packageDescription}}
                     </mdb-card-text>
           
-                    <button mdbBtn color="success" (click) = "openPackageModal(card.packageID, card.packageName,card.price,card.packageDescription)">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
+                    <button mdbBtn color="success" (click) = "openPackageModal(card.packageID, card.packageName,card.price,cardsDes[i].packageDescription)">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
+                  
                   </mdb-card-body>
                 </mdb-card>
               </div>

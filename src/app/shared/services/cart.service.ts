@@ -1,3 +1,4 @@
+import { PackageDescriptionService } from './package-description.service';
 import { Cart } from '../cart.model';
 import { Injectable,EventEmitter } from '@angular/core';
 import { ProductsService } from './products.service';
@@ -16,7 +17,9 @@ export class CartService{
     imgSrc:string;
     isPack:string;
 
-    constructor(private productService:ProductsService, private packageService:PackagesService){}
+    constructor(private productService:ProductsService,
+                private packageService:PackagesService, 
+                private packageDescriptionService:PackageDescriptionService){}
 
     cart:Cart[]= [];
 
@@ -30,12 +33,12 @@ export class CartService{
         this.onAdded.emit(this.getNumberOfElement());
     }
 
-    addPackages(packID,weight,price){
+    addPackages(packageID,weight,price){
         this.cartID = '001';
         this.isPack='f';
-        this.packageName=this.packageService.getPackage(packID).packageName;
-        this.imgSrc=this.packageService.getPackage(packID).imgSrc;
-        this.cart.push(new Cart(this.cartID,packID,this.packageName,this.imgSrc,weight,price,this.isPack));
+        this.packageName =this.packageDescriptionService.getPackagesDescription(packageID).packageDescription
+        this.imgSrc=this.packageService.getPackage(packageID).imgSrc;
+        this.cart.push(new Cart(this.cartID,packageID,this.packageName,this.imgSrc,weight,price,this.isPack));
         this.onAdded.emit(this.getNumberOfElement());
        
     }

@@ -1,3 +1,5 @@
+import { PackageDescription } from './../shared/packageDescription.models';
+import { PackageDescriptionService } from './../shared/services/package-description.service';
 import { Packages } from './../shared/packages.model';
 import { Component, OnInit } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
@@ -16,7 +18,8 @@ export class FeaturedPackComponent implements OnInit {
   modalRef: MDBModalRef;
 
   constructor(private modalService: MDBModalService,
-              private packageService: PackagesService) { }
+              private packageService: PackagesService,
+              private packageDescriptionService:PackageDescriptionService ) { }
 
   openPackageModal(packageID,packageName,price,packageDescription) {
     this.modalRef = this.modalService.show(PackPopupModalComponent, { 
@@ -39,10 +42,11 @@ export class FeaturedPackComponent implements OnInit {
   }
 
   cards: Packages[];
+  cardsDes: PackageDescription[];
 
   ngOnInit(): void {
     this.cards = this.packageService.getProducts();
-
+    this.cardsDes = this.packageDescriptionService.getPackagesDescriptions();
   
   }
 
