@@ -26,6 +26,10 @@ import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-p
 
 import { PackageDescriptionService } from './shared/services/package-description.service';
 import { UserPackComponent } from './user-pack/user-pack.component';
+import { UserPackListComponent } from './user-pack/user-pack-list/user-pack-list.component';
+import { UserPackDetailsComponent } from './user-pack/user-pack-details/user-pack-details.component';
+import { UserPackEditComponent } from './user-pack/user-pack-edit/user-pack-edit.component';
+import { UserPackCreateNewComponent } from './user-pack/user-pack-create-new/user-pack-create-new.component';
 
 
 
@@ -46,6 +50,10 @@ import { UserPackComponent } from './user-pack/user-pack.component';
     FloatBtnComponent,
     PackPopupModalComponent,
     UserPackComponent,
+    UserPackListComponent,
+    UserPackDetailsComponent,
+    UserPackEditComponent,
+    UserPackCreateNewComponent,
  
   ],
   imports: [
