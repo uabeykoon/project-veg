@@ -1,12 +1,13 @@
 import { PackageDescription } from './../packageDescription.models';
 import { Injectable } from '@angular/core';
+import { ProductsService } from './products.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PackageDescriptionService {
 
-  constructor() { }
+  constructor(private productService:ProductsService) { }
 
   private packagesDescription:PackageDescription[] = [
     new PackageDescription('101','002',500),
@@ -26,11 +27,14 @@ export class PackageDescriptionService {
     
 ];
 
+
 getPackagesDescriptions(){
   return this.packagesDescription.slice();
 }
 
 getPackagesDescription(p:any){
+
+
   return this.packagesDescription.filter((packageDes)=>p===packageDes.packageID);
 }
 

@@ -31,6 +31,7 @@ import { UserPackDetailsComponent } from './user-pack/user-pack-details/user-pac
 import { UserPackEditComponent } from './user-pack/user-pack-edit/user-pack-edit.component';
 import { UserPackCreateNewComponent } from './user-pack/user-pack-create-new/user-pack-create-new.component';
 import { PackageDescriptionPipePipe } from './shared/pipes/package-description-pipe.pipe';
+import { PackageItemNamingPipePipe } from './shared/pipes/package-item-naming-pipe.pipe';
 
 
 
@@ -56,6 +57,7 @@ import { PackageDescriptionPipePipe } from './shared/pipes/package-description-p
     UserPackEditComponent,
     UserPackCreateNewComponent,
     PackageDescriptionPipePipe,
+    PackageItemNamingPipePipe,
  
   ],
   imports: [
