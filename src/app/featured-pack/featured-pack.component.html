@@ -25,10 +25,11 @@
                     <h4>Rs. {{card.price}} /=</h4>
           
                     <mdb-card-text>
-                      {{cardsDes[i].packageDescription}}
+                      <!-- {{cardsDes[i].packageDescription}} -->
+                      
                     </mdb-card-text>
           
-                    <button mdbBtn color="success" (click) = "openPackageModal(card.packageID, card.packageName,card.price,cardsDes[i].packageDescription)">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
+                    <button mdbBtn color="success" (click) = "openPackageModal(card.packageID, card.packageName,card.price)">ADD TO CART <mdb-icon fas icon="cart-plus" style="margin-left: 10px;"></mdb-icon></button>
                   
                   </mdb-card-body>
                 </mdb-card>
@@ -38,4 +39,5 @@
 
         </mdb-card-body>
     </mdb-card>
+
 

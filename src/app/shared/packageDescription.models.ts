@@ -1,10 +1,12 @@
 export class PackageDescription{
     packageID : string;
-    packageDescription:string;
+    productID:string;
+    quantity:number;
 
-    constructor(packageID:string,packageDescription:string){
+    constructor(packageID:string,productID:string,quantity:number){
         this.packageID=packageID;
-        this.packageDescription=packageDescription;
+        this.productID=productID;
+        this.quantity= quantity;
 
     }
 }

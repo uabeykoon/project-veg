@@ -9,14 +9,21 @@ export class PackageDescriptionService {
   constructor() { }
 
   private packagesDescription:PackageDescription[] = [
-    new PackageDescription('101','Carrot 200g, Cabbage 750g, tomato 300g, beans 200g'),
-    new PackageDescription('102','tomato 300g, beans 200g'), 
-    new PackageDescription('103','Carrot 200g, Cabbage 750g, tomato 300g, beans 200g'),
-    new PackageDescription('104','Carrot 200g,beans 200g'),
-    new PackageDescription('105','Carrot 200g, Cabbage 750g, tomato 300g, beans 200g'),
-    new PackageDescription('106','Carrot 200g'),
-    new PackageDescription('107','beans 200g'),
-    new PackageDescription('108','tomato 300g, beans 200g'),
+    new PackageDescription('101','002',500),
+    new PackageDescription('101','003',600), 
+    new PackageDescription('101','005',600), 
+    new PackageDescription('101','001',900), 
+    new PackageDescription('102','002',300), 
+    new PackageDescription('102','006',800), 
+    new PackageDescription('102','001',1000), 
+    new PackageDescription('103','001',600), 
+    new PackageDescription('103','003',750), 
+    new PackageDescription('103','004',600),  
+    new PackageDescription('103','002',600), 
+    new PackageDescription('104','002',300), 
+    new PackageDescription('104','003',450), 
+    new PackageDescription('104','005',600), 
+    
 ];
 
 getPackagesDescriptions(){
@@ -24,7 +31,7 @@ getPackagesDescriptions(){
 }
 
 getPackagesDescription(p:any){
-  return this.packagesDescription.find((packageDes)=>p===packageDes.packageID);
+  return this.packagesDescription.filter((packageDes)=>p===packageDes.packageID);
 }
 
 }

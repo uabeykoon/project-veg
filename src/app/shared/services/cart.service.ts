@@ -36,7 +36,7 @@ export class CartService{
     addPackages(packageID,weight,price){
         this.cartID = '001';
         this.isPack='f';
-        this.packageName =this.packageDescriptionService.getPackagesDescription(packageID).packageDescription
+        this.packageName =this.packageService.getPackage(packageID).packageName
         this.imgSrc=this.packageService.getPackage(packageID).imgSrc;
         this.cart.push(new Cart(this.cartID,packageID,this.packageName,this.imgSrc,weight,price,this.isPack));
         this.onAdded.emit(this.getNumberOfElement());

@@ -21,7 +21,7 @@ export class FeaturedPackComponent implements OnInit {
               private packageService: PackagesService,
               private packageDescriptionService:PackageDescriptionService ) { }
 
-  openPackageModal(packageID,packageName,price,packageDescription) {
+  openPackageModal(packageID,packageName,price) {
     this.modalRef = this.modalService.show(PackPopupModalComponent, { 
       backdrop: true,
       keyboard: true,
@@ -34,7 +34,7 @@ export class FeaturedPackComponent implements OnInit {
       animated: true,
       data: {
           heading: 'Add to cart Confirmation',
-          content: { heading: 'Content heading', description: 'Content description',packageID:packageID ,packageName:packageName,price:price,packageDescription:packageDescription}
+          content: { heading: 'Content heading', description: 'Content description',packageID:packageID ,packageName:packageName,price:price}
       } });
 
       this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });
@@ -44,9 +44,29 @@ export class FeaturedPackComponent implements OnInit {
   cards: Packages[];
   cardsDes: PackageDescription[];
 
+  result:PackageDescription[];
+
   ngOnInit(): void {
     this.cards = this.packageService.getProducts();
     this.cardsDes = this.packageDescriptionService.getPackagesDescriptions();
+
+    let numberOfArrays = this.cards.length;
+    console.log(this.cardsDes);
+
+    // let x =[4,3,3,5,6,9,4];
+
+    this.result = this.cardsDes.filter((pack)=>{return pack.packageID==='101'});
+    console.log(this.result);
+
+
+    
+
+
+    // for(let i = 0;numberOfArrays;i++){
+    //   let abc :PackageDescription[] = [];
+    // }
+
+
   
   }
 
