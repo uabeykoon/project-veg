@@ -9,6 +9,7 @@ import { UserPackComponent } from './user-pack/user-pack.component';
 import { UserPackListComponent } from './user-pack/user-pack-list/user-pack-list.component';
 import { UserPackDetailsComponent } from './user-pack/user-pack-details/user-pack-details.component';
 import { UserPackEditComponent } from './user-pack/user-pack-edit/user-pack-edit.component';
+import { UserPackCreateNewComponent } from './user-pack/user-pack-create-new/user-pack-create-new.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path:'userpacklist',component:UserPackListComponent},
     {path:':id/viewuserpack',component:UserPackDetailsComponent},
     {path:':id/editpack',component:UserPackEditComponent},
+    {path:'create',component:UserPackCreateNewComponent}
 
   ]}
 ];

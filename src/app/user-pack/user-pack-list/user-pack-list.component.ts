@@ -23,4 +23,8 @@ export class UserPackListComponent implements OnInit {
     this.router.navigate(['userpacks',number,'editpack']);
   }
 
+  onCreatClick(){
+    this.router.navigate(['userpacks','create'])
+  }
+
 }
