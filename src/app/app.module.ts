@@ -32,6 +32,8 @@ import { UserPackEditComponent } from './user-pack/user-pack-edit/user-pack-edit
 import { UserPackCreateNewComponent } from './user-pack/user-pack-create-new/user-pack-create-new.component';
 import { PackageDescriptionPipePipe } from './shared/pipes/package-description-pipe.pipe';
 import { PackageItemNamingPipePipe } from './shared/pipes/package-item-naming-pipe.pipe';
+import { ViewPopUpModelComponent } from './user-pack/view-pop-up-model/view-pop-up-model/view-pop-up-model.component';
+import { UserPackDescriptionPipePipe } from './shared/pipes/user-pack-description-pipe.pipe';
 
 
 
@@ -58,6 +60,8 @@ import { PackageItemNamingPipePipe } from './shared/pipes/package-item-naming-pi
     UserPackCreateNewComponent,
     PackageDescriptionPipePipe,
     PackageItemNamingPipePipe,
+    ViewPopUpModelComponent,
+    UserPackDescriptionPipePipe,
  
   ],
   imports: [
