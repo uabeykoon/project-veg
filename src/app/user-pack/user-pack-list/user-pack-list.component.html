@@ -1,14 +1,27 @@
+<div class="row" style="margin-top:15px;">
+  <div class="col-md-12">
+    <section class="text-center pb-1 my-0">
+      <!--Section heading-->
+      <h2 class="h1 ">My Packages</h2>
+      <!--Section description-->
+      <!-- <p class="grey-text pb-1">Special discount packages</p> -->
+    </section>
+  </div>
+</div>
+  <mdb-card>
+      <mdb-card-body>
+
+
 <div class="container">
     <div class="row">
 
-
-
-        <div class="col-md-3">
+        <div class="col-md-3" style="margin-bottom: 10px;">
             
-            <mdb-card>
+            <mdb-card cascade="true" class="text-center pb-0" >
                 <div class="view rgba-white-slight waves-light" mdbWavesEffect>
                   <!-- Card img -->
-                  <mdb-card-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ16L6RygprLcledV0rJLvzgiZMbBCK5u7c7ZUHqBYrwFpx9apv&usqp=CAU" alt="Card image cap"></mdb-card-img>
+                  <mdb-card-img class="card-img-top img-responsive"  style="max-height: 150px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ16L6RygprLcledV0rJLvzgiZMbBCK5u7c7ZUHqBYrwFpx9apv&usqp=CAU" alt="Card image cap"></mdb-card-img>
+                
                   <a>
                     <div class="mask"></div>
                   </a>
@@ -29,17 +42,13 @@
                   
                 </mdb-card-body>
               </mdb-card>
-            
-
         </div>
 
 
-
-
-        <div class="col-md-3"  *ngFor = "let number of list">
+        <div class="col-md-3" style="margin-bottom: 10px;" *ngFor="let packs of myPacks ; let i = index ">
             
-            <mdb-card>
-                <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+            <mdb-card >
+                <div class="view rgba-white-slight waves-light" mdbWavesEffect >
                   <!-- Card img -->
                   <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
                   <a>
@@ -47,19 +56,26 @@
                   </a>
                 </div>
                 <!--Card content-->
-                <mdb-card-body>
+                <mdb-card-body cascade="true" class="text-center pb-0">
                   <!--Title-->
                   <mdb-card-title>
-                    <h4>Card Title {{number}}</h4>
+                    <h4>{{packs.packageName}}</h4>
+                    <h5>Rs.{{packs.price}}/=</h5>
                   </mdb-card-title>
               
                   <!--Text-->
-                  <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-                    content.
+                  <mdb-card-text> 
+                        <div class="container">
+                          <div class="row" *ngFor="let packsDes of myPackDes | userPackDescriptionPipe: packs.packageID">
+                            <div class="col-md-6">{{packsDes.productID | packageItemNamingPipe}}</div>
+                            <div class="col-md-6">{{packsDes.quantity}}</div>
+                          </div>
+                        </div>
                   </mdb-card-text>
               
-                  <a mdbBtn color="primary" mdbWavesEffect (click)="onItemClick(number)">View Pack</a>
-                  <a mdbBtn color="primary" mdbWavesEffect (click)="onEditClick(number)">Edit</a>
+                  <a mdbBtn color="primary"  mdbWavesEffect (click) = "openViewPackageModal()">View Pack</a>
+                  <a mdbBtn color="primary"  mdbWavesEffect >Edit</a>
+                  <a mdbBtn color="primary"  mdbWavesEffect >Add to Cart</a>
                 </mdb-card-body>
               </mdb-card>
             
@@ -67,3 +83,6 @@
         </div>
     </div>
 </div>
+</mdb-card-body>
+</mdb-card>
+  

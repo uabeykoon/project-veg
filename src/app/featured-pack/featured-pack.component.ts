@@ -51,21 +51,11 @@ export class FeaturedPackComponent implements OnInit {
     this.cardsDes = this.packageDescriptionService.getPackagesDescriptions();
 
     
-
     // let x =[4,3,3,5,6,9,4];
     
 
     this.result = this.cardsDes.filter((pack)=>{return pack.packageID==='101'});
     console.log(this.result);
-
-
-    
-    
-
-    
-      
-
-
   
   }
 
