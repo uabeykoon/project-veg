@@ -46,13 +46,16 @@
 
 
         <div class="col-md-3" style="margin-bottom: 10px;" *ngFor="let packs of myPacks ; let i = index ">
+
             
             <mdb-card >
                 <div class="view rgba-white-slight waves-light" mdbWavesEffect >
                   <!-- Card img -->
+                  <a (click)="openViewPackageModal(packs.packageID)">
                   <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
                   <a>
                     <div class="mask"></div>
+                  </a>
                   </a>
                 </div>
                 <!--Card content-->
@@ -60,24 +63,25 @@
                   <!--Title-->
                   <mdb-card-title>
                     <h4>{{packs.packageName}}</h4>
-                    <h5>Rs.{{packs.price}}/=</h5>
+                    <h5></h5>
                   </mdb-card-title>
               
                   <!--Text-->
                   <mdb-card-text> 
                         <div class="container">
-                          <div class="row" *ngFor="let packsDes of myPackDes | userPackDescriptionPipe: packs.packageID">
+                          <div class="row" *ngFor="let packsDes of myPackDes | packageDescriptionPipe: packs.packageID">
                             <div class="col-md-6">{{packsDes.productID | packageItemNamingPipe}}</div>
                             <div class="col-md-6">{{packsDes.quantity}}</div>
                           </div>
                         </div>
                   </mdb-card-text>
               
-                  <a mdbBtn color="primary"  mdbWavesEffect (click) = "openViewPackageModal()">View Pack</a>
-                  <a mdbBtn color="primary"  mdbWavesEffect >Edit</a>
+                  <a mdbBtn color="primary"  mdbWavesEffect (click) = "openViewPackageModal(packs.packageID)">View Pack</a>
+                  <!-- <a mdbBtn color="primary"  mdbWavesEffect >Edit</a> -->
                   <a mdbBtn color="primary"  mdbWavesEffect >Add to Cart</a>
                 </mdb-card-body>
               </mdb-card>
+            
             
 
         </div>

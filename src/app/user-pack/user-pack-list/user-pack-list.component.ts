@@ -48,20 +48,20 @@ export class UserPackListComponent implements OnInit {
   //   this.router.navigate(['userpacks',number,'editpack']);
   // }
   
-  openViewPackageModal() {
+  openViewPackageModal(packageID) {
     this.modalRef = this.modalService.show(ViewPopUpModelComponent, { 
       backdrop: true,
       keyboard: true,
       focus: true,
       show: false,
       ignoreBackdropClick: false,
-      class:'modal-dialog modal-md',
+      class:'modal-dialog-scrollable modal-md',
       containerClass: 'modal fade bottom',
-      role:'document',
+      role:'dialog',
       animated: true,
       data: {
           heading: 'Add to cart Confirmation',
-          content: { heading: 'Content heading', description: 'Content description',}
+          content: { heading: 'Content heading', description: 'Content description', packageID:packageID}
       } });
 
       this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });

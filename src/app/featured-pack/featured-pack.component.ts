@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { PackPopupModalComponent } from './pack-popup-modal/pack-popup-modal.component';
 import {PackagesService} from '../shared/services/packages.service';
+import { UserPackDescription } from '../shared/userPackDescription.model';
 
 
 @Component({
@@ -14,6 +15,8 @@ import {PackagesService} from '../shared/services/packages.service';
 })
 export class FeaturedPackComponent implements OnInit {
 
+  productList:UserPackDescription[];
+
   pp='';
   modalRef: MDBModalRef;
 
@@ -21,20 +24,20 @@ export class FeaturedPackComponent implements OnInit {
               private packageService: PackagesService,
               private packageDescriptionService:PackageDescriptionService ) { }
 
-  openPackageModal(packageID,packageName,price) {
+  openPackageModal(packageID) {
     this.modalRef = this.modalService.show(PackPopupModalComponent, { 
       backdrop: true,
       keyboard: true,
       focus: true,
       show: false,
       ignoreBackdropClick: false,
-      class:'modal-dialog modal-md',
+      class:'modal-dialog-scrollable modal-md',
       containerClass: 'modal fade bottom',
       role:'document',
       animated: true,
       data: {
           heading: 'Add to cart Confirmation',
-          content: { heading: 'Content heading', description: 'Content description',packageID:packageID ,packageName:packageName,price:price}
+          content: { heading: 'Content heading', description: 'Content description',packageID:packageID}
       } });
 
       this.modalRef.content.action.subscribe( (result: any) => { this.pp=result; });
