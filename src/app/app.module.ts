@@ -1,6 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -14,7 +12,6 @@ import { BannerSliderComponent } from './home/banner-slider/banner-slider.compon
 import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slider.component';
 import { FeaturedPackCardSliderComponent } from './home/featured-pack-card-slider/featured-pack-card-slider.component';
 import { ProductPopupModalComponent } from './all-products/product-popup-modal/product-popup-modal.component';
-import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { FloatBtnComponent } from './home/float-btn/float-btn.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -23,7 +20,6 @@ import { ProductsService } from './shared/services/products.service';
 import { CartService } from './shared/services/cart.service';
 import { PackagesService } from './shared/services/packages.service';
 import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
-
 import { PackageDescriptionService } from './shared/services/package-description.service';
 import { UserPackComponent } from './user-pack/user-pack.component';
 import { UserPackListComponent } from './user-pack/user-pack-list/user-pack-list.component';
@@ -34,10 +30,9 @@ import { PackageDescriptionPipePipe } from './shared/pipes/package-description-p
 import { PackageItemNamingPipePipe } from './shared/pipes/package-item-naming-pipe.pipe';
 import { ViewPopUpModelComponent } from './user-pack/view-pop-up-model/view-pop-up-model/view-pop-up-model.component';
 import { PackageItemImagePipePipe } from './shared/pipes/package-item-image-pipe.pipe';
-
-
-
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -79,6 +74,7 @@ import { PackageItemImagePipePipe } from './shared/pipes/package-item-image-pipe
   ],
   entryComponents:[ProductPopupModalComponent],
   providers: [ProductsService,CartService,PackagesService,PackageDescriptionService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
