@@ -27,16 +27,11 @@
                             <img class="img-responsive"  style="max-height: 50px;" src="https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg" alt="image cap">
                         </th>
                         <th>
-                          <!-- <mat-form-field>
-                            <input type="text" placeholder="Enter Products" matInput [formControl]="myControl"
-                                 [matAutocomplete]="auto">
-                               <mat-autocomplete #auto="matAutocomplete">
-                                 <mat-option *ngFor="let option of options" [value]="option">
-                                   {{option}}
-                                </mat-option>
-                            </mat-autocomplete>
-                         </mat-form-field> -->
-                            <input mdbInput placeholder="Product name" type="text" id="formproductname" class="form-control">
+                          <select class="browser-default custom-select" >
+                            <option selected>Select Product</option>
+                            <option *ngFor="let item of items">{{item.productName}}</option>
+                          </select>
+                            <!-- <input mdbInput placeholder="Product name" type="text" id="formproductname" class="form-control"> -->
                         </th>
                         <th>
                             <div class="row">
