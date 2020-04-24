@@ -1,6 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -14,7 +12,6 @@ import { BannerSliderComponent } from './home/banner-slider/banner-slider.compon
 import { ItemCardSliderComponent } from './home/item-card-slider/item-card-slider.component';
 import { FeaturedPackCardSliderComponent } from './home/featured-pack-card-slider/featured-pack-card-slider.component';
 import { ProductPopupModalComponent } from './all-products/product-popup-modal/product-popup-modal.component';
-import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { FloatBtnComponent } from './home/float-btn/float-btn.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -23,7 +20,6 @@ import { ProductsService } from './shared/services/products.service';
 import { CartService } from './shared/services/cart.service';
 import { PackagesService } from './shared/services/packages.service';
 import { PackPopupModalComponent } from './featured-pack/pack-popup-modal/pack-popup-modal.component';
-
 import { PackageDescriptionService } from './shared/services/package-description.service';
 import { UserPackComponent } from './user-pack/user-pack.component';
 import { UserPackListComponent } from './user-pack/user-pack-list/user-pack-list.component';
@@ -42,6 +38,15 @@ import { ProductsAdminComponent } from './admin/products-admin/products-admin.co
 
 
 
+import { NgModule} from '@angular/core';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input'; 
+
+
+//import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -81,11 +86,17 @@ import { ProductsAdminComponent } from './admin/products-admin/products-admin.co
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatInputModule
     
   ],
   entryComponents:[ProductPopupModalComponent],
   providers: [ProductsService,CartService,PackagesService,PackageDescriptionService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: []
 })
 export class AppModule { }

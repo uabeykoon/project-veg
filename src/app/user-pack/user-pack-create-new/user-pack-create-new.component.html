@@ -1,0 +1,136 @@
+<div class="row" style="margin-top:15px;">
+    <div class="col-md-12">
+      <section class="text-center pb-1 my-0">
+        <!--Section heading-->
+        <h2 class="h1 ">Create Packages</h2>
+      </section>
+    </div>
+</div>
+
+<mdb-card>
+    <mdb-card-body>
+
+
+        <div class="container">
+            <div class="row">
+
+                <div class="md-form">
+                    <mdb-icon fas icon="cart-arrow-down" class="prefix"></mdb-icon>
+                    <input mdbInput type="text" id="form2" class="form-control">
+                    <label for="form2">Enter your Package Name</label>
+                </div>
+
+                <table mdbTable>
+                    <thead class="black white-text">
+                      <tr>
+                        <th>
+                            <img class="img-responsive"  style="max-height: 50px;" src="https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg" alt="image cap">
+                        </th>
+                        <th>
+                          <!-- <mat-form-field>
+                            <input type="text" placeholder="Enter Products" matInput [formControl]="myControl"
+                                 [matAutocomplete]="auto">
+                               <mat-autocomplete #auto="matAutocomplete">
+                                 <mat-option *ngFor="let option of options" [value]="option">
+                                   {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                         </mat-form-field> -->
+                            <input mdbInput placeholder="Product name" type="text" id="formproductname" class="form-control">
+                        </th>
+                        <th>
+                            <div class="row">
+                                <button mat-mini-fab class="warning-color " (click)="onMinusClick()">
+                                    <mdb-icon fas icon="minus"  style="color: white;"></mdb-icon>
+                                </button>
+                                <h1>{{weight}} g</h1>
+                                <button mat-mini-fab class="warning-color"  (click)="onPlusClick()">
+                                    <mdb-icon fas icon="plus" style="color: white;"></mdb-icon>
+                                </button>
+                            </div>
+                        </th>
+                        <th>Price</th>
+                        <th>
+                            <button mdbBtn type="button" color="success" rounded="true" size="sm"  mdbWavesEffect>Click to Add</button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody> 
+                </table> 
+
+                <table mdbTable style="margin-top: 25px;">
+                    <thead class="black white-text">
+                      <tr>
+                        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr mdbTableCol *ngFor="let el of elements">
+                        <th scope="row">{{el.id}}</th>
+                        <td>{{el.imgview}}</td>
+                        <td>{{el.name}}</td>
+                        <td>{{el.quantity}}</td>
+                        <td>{{el.price}}</td>
+                        <td><span class="table-remove">
+                            <button mdbBtn type="button" color="success" rounded="true" size="sm" mdbWavesEffect>X</button>
+                          </span>
+                        </td>
+
+                      </tr>
+                    </tbody> 
+                </table> 
+
+                <hr class="warning-color">
+
+
+                <!-- <div class="row col-md-12 black white-text">
+                        <img class="card-img-top img-responsive col-1"  style="max-height: 50px;" src="https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg" alt="Card image cap">
+                        <input mdbInput placeholder="Product name" type="text" id="form58" class="form-control col-3">
+                        <div class="row ">
+                            <div class="col-1" style="text-align: center;">
+                              <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon" (click)="onMinusClick()">
+                                <mdb-icon fas icon="minus" style="color: white;"></mdb-icon>
+                              </button>
+                            </div>
+        
+                            <div class="col-2" style="text-align: center;"><h1>100 g</h1></div>
+        
+                            <div class="col-1" style="text-align: center;">
+                              <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon" (click)="onPlusClick()">
+                                <mdb-icon fas icon="plus" style="color: white;"></mdb-icon>
+                              </button>
+                            </div>
+
+                            <button class="col-2" mdbBtn type="button" color="success" rounded="true" size="sm"  mdbWavesEffect>Click to Add</button>
+                          
+                        </div>
+                </div>     -->
+
+    
+
+                  <hr class="warning-color">
+
+                    <div class="row" style="margin-top: 20px; ">
+                    <div class="col-md-12">
+                        <section class="text-left pb-1 my-1">
+                        <!--Section heading-->
+                        <h2 class="h1 ">Total :Rs.5000/= </h2>
+                        <button mdbBtn type="button" color="success" rounded="true" size="lg" mdbWavesEffect>Confirm & Create Package</button>
+                        </section>
+                    </div>
+                    </div>
+                    <hr>
+
+
+                
+
+
+
+            </div>
+        </div>        
+  
+    </mdb-card-body>
+</mdb-card>        
+
