@@ -43,7 +43,8 @@ import { NgModule} from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import { CartQuantityAndWeightPipePipe } from './shared/pipes/cart-quantity-and-weight-pipe.pipe'; 
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -75,6 +76,7 @@ import {MatInputModule} from '@angular/material/input';
     AdminComponent,
     OrdersComponent,
     ProductsAdminComponent,
+    CartQuantityAndWeightPipePipe,
     
     
  

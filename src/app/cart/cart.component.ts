@@ -13,7 +13,20 @@ export class CartComponent implements OnInit {
   cartItems:Cart[]=[];
   totalAmount:number=0;
 
-  constructor(private cartService : CartService) { }
+  constructor(private cartService : CartService) { 
+
+//getting new array after removing some element from cart
+    this.cartService.onRemoved.subscribe((arr:Cart[])=>{
+        this.cartItems=arr;
+//calculating new total after removing items
+    this.totalAmount=0;
+    for(var x=0; x<this.cartItems.length; x++){
+      this.totalAmount=this.totalAmount+this.cartItems[x].totalAmountPerItem;
+    }
+
+        
+    });
+  }
 
   ngOnInit(){
     this.cartItems = this.cartService.getItems();
@@ -25,5 +38,9 @@ export class CartComponent implements OnInit {
   }
 
   headElements = ['ID', 'Product View' ,'Product Name', 'Quantity', 'Price','Remove'];
+
+  onClickRemove(productID){
+    this.cartService.removeItem(productID);
+  }
 
 }

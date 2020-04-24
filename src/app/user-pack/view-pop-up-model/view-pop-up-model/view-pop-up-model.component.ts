@@ -23,6 +23,7 @@ export class ViewPopUpModelComponent implements OnInit {
   
 //get contents those are passing with modal
   content:any;
+  weight=1;
 
 
   productList:UserPackDescription[];
@@ -56,7 +57,7 @@ export class ViewPopUpModelComponent implements OnInit {
   }
 
   onAddToCartClick(){
-    this.cartService.addUserPackages(this.content.packageID,0,this.totalAmount);
+    this.cartService.addUserPackages(this.content.packageID,this.weight,this.totalAmount);
     this.modalRef.hide();
   }
 

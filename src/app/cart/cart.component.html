@@ -20,10 +20,10 @@
       <th scope="row">{{item.isPack}}</th>
       <td><img [src]="item.imgSrc" class="img-responsive size"></td>
       <td>{{item.productName}}</td>
-      <td>{{item.weight}}g</td>
+      <td>{{item.weight | cartQuantityAndWeightPipe}}</td>
       <td>Rs {{item.totalAmountPerItem}}/=</td>
       <td><span class="table-remove">
-        <button mdbBtn type="button" color="danger" rounded="true" size="sm" mdbWavesEffect>X</button>
+        <button mdbBtn type="button" color="danger" rounded="true" size="sm" mdbWavesEffect (click)="onClickRemove(item.productID)">X</button>
       </span></td>
     </tr>
   </tbody>
