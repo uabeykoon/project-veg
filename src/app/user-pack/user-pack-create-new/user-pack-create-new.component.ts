@@ -1,3 +1,5 @@
+import { ProductsService } from './../../shared/services/products.service';
+import { Products } from './../../shared/products.models';
 import { FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserPackCreateNewComponent implements OnInit {
 
-  constructor(private activatedRout:ActivatedRoute) { }
+  constructor(private activatedRout:ActivatedRoute,
+              private productService:ProductsService ) { }
+
+  items:Products[];
 
   elements: any = [
     {id: 1,imgview: 'photo',name: 'Carrot', quantity: '100g', price: 'Rs.120/='},
@@ -23,13 +28,11 @@ export class UserPackCreateNewComponent implements OnInit {
 
   headElements =   ['No.','Product View' ,'Product name', 'Quantity', 'Price', 'Remove'];
 
-  // myControl = new FormControl();
-  // options: string[] = ['Carrot', 'Beatroot', 'Cabbage'];
-
-
-
   ngOnInit(): void {
     console.log(this.activatedRout.params['id']);
+
+    this.items = this.productService.getProducts();
+    
     
   }
 
