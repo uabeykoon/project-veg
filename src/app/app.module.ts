@@ -34,6 +34,10 @@ import { PackageDescriptionPipePipe } from './shared/pipes/package-description-p
 import { PackageItemNamingPipePipe } from './shared/pipes/package-item-naming-pipe.pipe';
 import { ViewPopUpModelComponent } from './user-pack/view-pop-up-model/view-pop-up-model/view-pop-up-model.component';
 import { PackageItemImagePipePipe } from './shared/pipes/package-item-image-pipe.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { OrdersComponent } from './admin/orders/orders.component';
+import { ProductsAdminComponent } from './admin/products-admin/products-admin.component';
+
 
 
 
@@ -63,6 +67,9 @@ import { PackageItemImagePipePipe } from './shared/pipes/package-item-image-pipe
     PackageItemNamingPipePipe,
     ViewPopUpModelComponent,
     PackageItemImagePipePipe,
+    AdminComponent,
+    OrdersComponent,
+    ProductsAdminComponent,
     
     
  
