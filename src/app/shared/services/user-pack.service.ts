@@ -29,6 +29,11 @@ addUserPackage(packageID,packageName,price){
   this.userpackages.push(new UserPackages(packageID,packageName,price));
 }
 
+updatePackage(packageID,packageName){
+  let ind =this.userpackages.indexOf(this.getPackage(packageID));
+  this.userpackages[ind].packageName=packageName;
+}
+
 
 
 }

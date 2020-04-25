@@ -17,7 +17,7 @@ import { Products } from 'src/app/shared/products.models';
                 private router:Router,
                 private productService:ProductsService,
                 private userPackageService:UserPackService,
-                private userPackageDescription:UserPackDescriptionService ) { }
+                private userPackageDescriptionService:UserPackDescriptionService ) { }
   //define selecte item variables
   packageID:string;
   packageName:string;
@@ -137,24 +137,18 @@ import { Products } from 'src/app/shared/products.models';
 
 //on confirm click
   onConfirmClick(){
-//generate random id for new package
-  this.packageID=uuidv4();
-//update userPackageService
-  this.userPackageService.addUserPackage(this.packageID,this.packageName,0);
-//update userPackageDescriptionservice
-  for(let x of this.addedItems){
-  this.userPackageDescription.addUserPackageDescription(this.packageID,x.productID,x.weight);
-  }
+    this.userPackageDescriptionService.updateUserPackageDescription(this.packageID,this.addedItems);
+//update name on
+    this.userPackageService.updatePackage(this.packageID,this.packageName);
 //navigate to userpack page
-  this.router.navigate(['userpacks','userpacklist']);
-
+    this.router.navigate(['userpacks','userpacklist']);
   }
 
 
 
   loadExistingItemToDisplayArray(){
 //get package description related to package
-    let loadedArray=this.userPackageDescription.getPackagesDescription(this.packageID);
+    let loadedArray=this.userPackageDescriptionService.getPackagesDescription(this.packageID);
 
 //push existing items to display array    
     for(let y of loadedArray){
