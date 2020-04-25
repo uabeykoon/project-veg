@@ -44,7 +44,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { CartQuantityAndWeightPipePipe } from './shared/pipes/cart-quantity-and-weight-pipe.pipe'; 
+import { CartQuantityAndWeightPipePipe } from './shared/pipes/cart-quantity-and-weight-pipe.pipe';
+import { SignInPopupModalComponent } from './signIn-signUp/signIn-popup-modal/sign-in-popup-modal/sign-in-popup-modal.component';
+import { SignUpPopupModalComponent } from './signIn-signUp/signUp-popup-modal/sign-up-popup-modal/sign-up-popup-modal.component';
+import { OrderConfirmPopupModalComponent } from './cart/oderConfirm-popup-modal/order-confirm-popup-modal/order-confirm-popup-modal.component'; 
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -77,6 +80,9 @@ import { CartQuantityAndWeightPipePipe } from './shared/pipes/cart-quantity-and-
     OrdersComponent,
     ProductsAdminComponent,
     CartQuantityAndWeightPipePipe,
+    SignInPopupModalComponent,
+    SignUpPopupModalComponent,
+    OrderConfirmPopupModalComponent,
     
     
  
