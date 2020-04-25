@@ -16,7 +16,7 @@
 
                 <div class="md-form">
                     <mdb-icon fas icon="cart-arrow-down" class="prefix"></mdb-icon>
-                    <input mdbInput type="text" id="form2" class="form-control">
+                    <input mdbInput type="text" id="form2" class="form-control" [(ngModel)]="packageName">
                     <label for="form2">Enter your Package Name</label>
                 </div>
 
@@ -88,7 +88,7 @@
                         <section class="text-left pb-1 my-1">
                         <!--Section heading-->
                         <h2 class="h1 ">Total :Rs {{packTotalPrice}}/= </h2>
-                        <button mdbBtn type="button" color="success" rounded="true" size="lg" mdbWavesEffect>Confirm & Create Package</button>
+                        <button mdbBtn type="button" color="success" rounded="true" size="lg" mdbWavesEffect (click)="onConfirmClick()">Confirm & Create Package</button>
                         </section>
                     </div>
                     </div>

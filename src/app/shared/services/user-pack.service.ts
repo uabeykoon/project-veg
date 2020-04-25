@@ -25,6 +25,10 @@ getPackage(p:any){
   return this.userpackages.find((package1)=>p===package1.packageID);
 }
 
+addUserPackage(packageID,packageName,price){
+  this.userpackages.push(new UserPackages(packageID,packageName,price));
+}
+
 
 
 }

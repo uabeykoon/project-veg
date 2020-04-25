@@ -57,7 +57,7 @@ export class UserPackListComponent implements OnInit {
       ignoreBackdropClick: false,
       class:'modal-dialog-scrollable modal-md',
       containerClass: 'modal fade bottom',
-      role:'dialog',
+      role:'document',
       animated: true,
       data: {
           heading: 'Add to cart Confirmation',
