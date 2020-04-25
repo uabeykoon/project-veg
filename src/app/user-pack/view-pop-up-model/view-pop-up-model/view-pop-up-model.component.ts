@@ -5,6 +5,7 @@ import { UserPackDescriptionService } from 'src/app/shared/services/user-pack-de
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { UserPackService } from 'src/app/shared/services/user-pack.service';
 import { CartService } from 'src/app/shared/services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-pop-up-model',
@@ -17,10 +18,12 @@ export class ViewPopUpModelComponent implements OnInit {
               private userPackService:UserPackService,
               private userPackDesService:UserPackDescriptionService,
               private productService:ProductsService,
-              private cartService:CartService) { }
+              private cartService:CartService,
+              private router:Router) { }
   
 //get contents those are passing with modal
   content:any;
+  weight=1;
 
 
   productList:UserPackDescription[];
@@ -54,7 +57,12 @@ export class ViewPopUpModelComponent implements OnInit {
   }
 
   onAddToCartClick(){
-    this.cartService.addUserPackages(this.content.packageID,0,this.totalAmount);
+    this.cartService.addUserPackages(this.content.packageID,this.weight,this.totalAmount);
+    this.modalRef.hide();
+  }
+
+  onEditClick(){
+    this.router.navigate(['userpacks',this.content.packageID,'editpack']);
     this.modalRef.hide();
   }
 

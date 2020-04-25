@@ -30,8 +30,23 @@ import { PackageDescriptionPipePipe } from './shared/pipes/package-description-p
 import { PackageItemNamingPipePipe } from './shared/pipes/package-item-naming-pipe.pipe';
 import { ViewPopUpModelComponent } from './user-pack/view-pop-up-model/view-pop-up-model/view-pop-up-model.component';
 import { PackageItemImagePipePipe } from './shared/pipes/package-item-image-pipe.pipe';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { OrdersComponent } from './admin/orders/orders.component';
+import { ProductsAdminComponent } from './admin/products-admin/products-admin.component';
+
+
+
+
+
+import { NgModule} from '@angular/core';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { CartQuantityAndWeightPipePipe } from './shared/pipes/cart-quantity-and-weight-pipe.pipe'; 
+
+
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
 
 @NgModule({
@@ -58,6 +73,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PackageItemNamingPipePipe,
     ViewPopUpModelComponent,
     PackageItemImagePipePipe,
+    AdminComponent,
+    OrdersComponent,
+    ProductsAdminComponent,
+    CartQuantityAndWeightPipePipe,
     
     
  
@@ -69,12 +88,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatInputModule
     
   ],
   entryComponents:[ProductPopupModalComponent],
   providers: [ProductsService,CartService,PackagesService,PackageDescriptionService],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: []
 })
 export class AppModule { }

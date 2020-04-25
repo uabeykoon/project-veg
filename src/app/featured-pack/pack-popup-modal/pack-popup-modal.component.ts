@@ -26,7 +26,7 @@ export class PackPopupModalComponent implements OnInit {
 
     heading: string;
     content: any;
-    weight = "-";
+    weight = 1;
 
   ngOnInit(): void {
     //get all product description
