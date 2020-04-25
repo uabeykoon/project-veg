@@ -24,12 +24,12 @@
                     <thead class="black white-text">
                       <tr>
                         <th>
-                            <img class="img-responsive"  style="max-height: 50px;" src="https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg" alt="image cap">
-                        </th>
+                            <img class="img-responsive"  style="max-height: 50px;"  src= {{unitimg}} alt=" Prodcut image">
+                        </th> 
                         <th>
-                          <select class="browser-default custom-select" >
+                          <select class="browser-default custom-select" (change)="selectOption($event.target.value)" >
                             <option selected>Select Product</option>
-                            <option *ngFor="let item of items">{{item.productName}}</option>
+                            <option *ngFor="let item of items" [value]="item.productID" >{{item.productName}}</option>
                           </select>
                             <!-- <input mdbInput placeholder="Product name" type="text" id="formproductname" class="form-control"> -->
                         </th>
@@ -44,9 +44,10 @@
                                 </button>
                             </div>
                         </th>
-                        <th>Price</th>
+                        <!-- <th *ngFor="let item of res">{{item.unitPrice}}</th> -->
+                        <th>Rs.{{totalPrice}}/=</th>
                         <th>
-                            <button mdbBtn type="button" color="success" rounded="true" size="sm"  mdbWavesEffect>Click to Add</button>
+                            <button mdbBtn type="button" color="success" rounded="true" size="sm" (click) = "addToTable()" mdbWavesEffect>Click to Add</button>
                         </th>
                       </tr>
                     </thead>
@@ -62,12 +63,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr mdbTableCol *ngFor="let el of elements">
-                        <th scope="row">{{el.id}}</th>
-                        <td>{{el.imgview}}</td>
-                        <td>{{el.name}}</td>
-                        <td>{{el.quantity}}</td>
-                        <td>{{el.price}}</td>
+                      <tr mdbTableCol *ngFor="let tdata of res" >
+                        <th scope="row">{{unitid}}</th>
+                        <td><img class="img-responsive"  style="max-height: 50px;"  src= {{unitimg}} alt=" Prodcut image"></td>
+                        <td>{{unitname}}</td>
+                        <td>{{weight}}</td>
+                        <td>{{totalPrice}}</td>
                         <td><span class="table-remove">
                             <button mdbBtn type="button" color="success" rounded="true" size="sm" mdbWavesEffect>X</button>
                           </span>
@@ -79,31 +80,6 @@
 
                 <hr class="warning-color">
 
-
-                <!-- <div class="row col-md-12 black white-text">
-                        <img class="card-img-top img-responsive col-1"  style="max-height: 50px;" src="https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg" alt="Card image cap">
-                        <input mdbInput placeholder="Product name" type="text" id="form58" class="form-control col-3">
-                        <div class="row ">
-                            <div class="col-1" style="text-align: center;">
-                              <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon" (click)="onMinusClick()">
-                                <mdb-icon fas icon="minus" style="color: white;"></mdb-icon>
-                              </button>
-                            </div>
-        
-                            <div class="col-2" style="text-align: center;"><h1>100 g</h1></div>
-        
-                            <div class="col-1" style="text-align: center;">
-                              <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon" (click)="onPlusClick()">
-                                <mdb-icon fas icon="plus" style="color: white;"></mdb-icon>
-                              </button>
-                            </div>
-
-                            <button class="col-2" mdbBtn type="button" color="success" rounded="true" size="sm"  mdbWavesEffect>Click to Add</button>
-                          
-                        </div>
-                </div>     -->
-
-    
 
                   <hr class="warning-color">
 
