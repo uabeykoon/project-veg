@@ -2,7 +2,10 @@ import { ProductsService } from './../../shared/services/products.service';
 import { Products } from './../../shared/products.models';
 import { FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { v4 as uuidv4 } from 'uuid';
+import { UserPackService } from 'src/app/shared/services/user-pack.service';
+import { UserPackDescriptionService } from 'src/app/shared/services/user-pack-description.service';
 
 
 @Component({
@@ -13,8 +16,14 @@ import { ActivatedRoute } from '@angular/router';
 export class UserPackCreateNewComponent implements OnInit {
 
   constructor(private activatedRout:ActivatedRoute,
-              private productService:ProductsService ) { }
+              private router:Router,
+              private productService:ProductsService,
+              private userPackageService:UserPackService,
+              private userPackageDescription:UserPackDescriptionService ) { }
 //define selecte item variables
+  packageID:string;
+  packageName:string;
+
   selectedItemweight = 200;
   selectedID:string;
   selectedItemName:string;
@@ -41,7 +50,7 @@ export class UserPackCreateNewComponent implements OnInit {
   selectOption(ID: string) {
 
   //recieve all the details related to selected item
-    console.log(ID);
+    //console.log(ID);
     this.selectedID = ID
     this.selectedItemName = this.items.find((x)=>x.productID===ID).productName;
     this.selectedItemImg = this.items.find((x)=>x.productID===ID).imgSrc;
@@ -71,10 +80,24 @@ export class UserPackCreateNewComponent implements OnInit {
 
 
   addToTable(){
-//add item object to addeditems array
+    if(this.getItem(this.selectedID)){
+      let index = this.addedItems.indexOf(this.getItem(this.selectedID));
+      this.addedItems[index].weight=this.addedItems[index].weight+this.selectedItemweight;
+      this.addedItems[index].totalPricePerItem=this.addedItems[index].totalPricePerItem+this.selectedItemTotalPrice;
+      console.log(index);
+      this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
+     
+    }
+    else{
+  //add item object to addeditems array
     this.addedItems.push({productID:this.selectedID,productName:this.selectedItemName,imgSrc:this.selectedItemImg,weight:this.selectedItemweight,totalPricePerItem:this.selectedItemTotalPrice});
-//update total price 
-    this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
+  //update total price 
+        this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
+
+    }
+
+
+
   
   }
 
@@ -97,6 +120,26 @@ export class UserPackCreateNewComponent implements OnInit {
     }
     return total;
   }
+//search packageID existense before adding
+  getItem(productID){
+    return this.addedItems.find((x)=>x.productID===productID);
+  }
+
+//on confirm click
+  onConfirmClick(){
+//generate random id for new package
+    this.packageID=uuidv4();
+//update userPackageService
+    this.userPackageService.addUserPackage(this.packageID,this.packageName,0);
+//update userPackageDescriptionservice
+    for(let x of this.addedItems){
+      this.userPackageDescription.addUserPackageDescription(this.packageID,x.productID,x.weight);
+    }
+//navigate to userpack page
+    this.router.navigate(['userpacks','userpacklist']);
+    
+}
+
 
   
 }

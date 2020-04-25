@@ -40,5 +40,9 @@ getPackagesDescription(p:any){
   return this.userPackaDescription.filter((packageDes)=>p===packageDes.packageID);
 }
 
+addUserPackageDescription(packageID,productID,weight){
+  this.userPackaDescription.push(new UserPackDescription(packageID,productID,weight));
+}
+
 
 }

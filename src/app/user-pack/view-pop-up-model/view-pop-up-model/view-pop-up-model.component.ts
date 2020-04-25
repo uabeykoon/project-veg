@@ -22,6 +22,7 @@ export class ViewPopUpModelComponent implements OnInit {
               private router:Router) { }
   
 //get contents those are passing with modal
+  packageName:string;
   content:any;
   weight=1;
 
@@ -36,7 +37,11 @@ export class ViewPopUpModelComponent implements OnInit {
   //filter related package description list
     const specificProductList = this.productList.filter((x)=>{
       return x.packageID===this.content.packageID;
+  
+    
     })
+  //get package name
+  this.packageName = this.userPackService.getPackage(this.content.packageID).packageName;
 
   //calculate total amount of pack
     let x = 0;

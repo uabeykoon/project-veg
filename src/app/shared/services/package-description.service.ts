@@ -33,8 +33,6 @@ getPackagesDescriptions(){
 }
 
 getPackagesDescription(p:any){
-
-
   return this.packagesDescription.filter((packageDes)=>p===packageDes.packageID);
 }
 
