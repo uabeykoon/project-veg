@@ -1,5 +1,5 @@
 
-<mdb-navbar SideClass="navbar navbar-expand-sm navbar-dark success-color big" [containerInside]="true" [iconBackground]="'warning-color'">
+<mdb-navbar SideClass="navbar navbar-expand-sm navbar-dark success-color-dark big"  [containerInside]="true" [iconBackground]="'warning-color'">
 
     
    
@@ -10,7 +10,7 @@
         <links  style="font-size: large;">
             
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto py-10">
             <li class="nav-item active"
             routerLinkActive = "active"
             [routerLinkActiveOptions]="{exact:true}">
@@ -20,13 +20,13 @@
             <a class="nav-link waves-light" mdbWavesEffect routerLink="allproducts">Items</a>
             </li>
             <li class="nav-item" routerLinkActive = "active">
-            <a class="nav-link waves-light" mdbWavesEffect routerLink="featuredpacks">Featured Pack</a>
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="featuredpacks">Featured Packs</a>
             </li>
             <li class="nav-item" routerLinkActive = "active">
-                <a class="nav-link waves-light" mdbWavesEffect routerLink="userpacks/userpacklist">My Pack</a>
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="userpacks/userpacklist">My Packs</a>
                 </li>
             <li class="nav-item" routerLinkActive = "active">
-                <a class="nav-link waves-light" mdbWavesEffect routerLink="contactus">About us</a>
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="contactus">Contact Us</a>
             </li>
     
             <!-- Dropdown -->
@@ -48,7 +48,7 @@
         <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item">
             <a class="nav-link">
-                <mdb-icon fab icon="twitter"></mdb-icon>
+                <mdb-icon fab icon="facebook-square"></mdb-icon>
             </a>
             </li>
             <li class="nav-item">
@@ -85,4 +85,5 @@
 
   
   </mdb-navbar>
+
   <!--/.Navbar-->
