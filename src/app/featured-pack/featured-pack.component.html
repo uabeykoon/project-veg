@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row" style="margin-top:15px;">
     <div class="col-md-12">
       <section class="text-center pb-1 my-0">
@@ -8,32 +9,35 @@
       </section>
     </div>
 </div>
-    <mdb-card>
+    <mdb-card class="card pb-0 rounded w-100">
         <mdb-card-body>
 
           <div class="container">
             <div class="row">
-              <div class="col-md-3 mx-auto my-4" *ngFor="let card of cards ; let i = index ">
-                <mdb-card>
-                  <mdb-card-img [src]="card.imgSrc" alt="Card image cap">
-                  </mdb-card-img>
+              <div class="mx-auto my-4" *ngFor="let card of cards ; let i = index ">
+                
+                <mdb-card class="card text-center pb-0 rounded hoverable">
+                  <div class="view overlay">
+                    <img class="card-img-top img-responsive" style="height: 150px;"
+                      [src]="card.imgSrc">
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
                   <mdb-card-body>
                     <mdb-card-title>
-                      <h4>{{card.packageName}}</h4>
+                      <h4 style="height: 30px;">{{card.packageName}}</h4>
                       <hr class="warning-color">
                     </mdb-card-title>
-                    <h4>Rs. {{card.price}} /=</h4>
+                    <h4>Rs.{{card.price}} /=</h4>
           
-                    <mdb-card-text>
-                      <div class="container">
+                    <mdb-card-text >
+                      <div class="container example-1 scrollbar-ripe-malinka">
                         <div class="row" *ngFor="let item of cardsDes | packageDescriptionPipe:card.packageID">
-                          <div class="col-md-6">{{item.productID | packageItemNamingPipe}}</div>
-                          <div class="col-md-6">{{item.quantity}}</div>
+                          <div>{{item.productID | packageItemNamingPipe}} - </div>
+                          <div> {{item.quantity}}g</div>
                         </div>
                       </div>
-                        
-                        
-                      
                       
                     </mdb-card-text>
           
@@ -47,5 +51,7 @@
 
         </mdb-card-body>
     </mdb-card>
+</div>
+
 
 

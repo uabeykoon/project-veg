@@ -49,11 +49,15 @@ export class ItemCardSliderComponent implements OnInit {
 
 
     this.innerWidth = window.innerWidth;
-    if(this.innerWidth<500){
+    if(this.innerWidth<575){
       this.slides = this.chunk(this.cards, 1);
       this.onc=true;
     }
-    if(this.innerWidth>=500){
+    if(this.innerWidth>=575 && this.innerWidth<768){
+      this.slides = this.chunk(this.cards, 2);
+      this.onc=false;
+    }
+    if(this.innerWidth>=768){
       this.slides = this.chunk(this.cards, 4);
       this.onc=false;
     }
@@ -67,15 +71,18 @@ export class ItemCardSliderComponent implements OnInit {
   this.innerWidth = window.innerWidth;
   this.x = innerWidth+200;
 
-    if(this.innerWidth<500){
-      this.slides = this.chunk(this.cards, 1);
-      this.onc=true;
-    }
-    if (this.innerWidth>=500) {
-      this.slides = this.chunk(this.cards, 4);
-      this.onc=false;
-    } 
-
+  if(this.innerWidth<575){
+    this.slides = this.chunk(this.cards, 1);
+    this.onc=true;
+  }
+  if(this.innerWidth>=575 && this.innerWidth<768){
+    this.slides = this.chunk(this.cards, 2);
+    this.onc=false;
+  }
+  if(this.innerWidth>=768){
+    this.slides = this.chunk(this.cards, 4);
+    this.onc=false;
+  }
 }
 
 
