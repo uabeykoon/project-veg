@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { v4 as uuidv4 } from 'uuid';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { UserPackService } from 'src/app/shared/services/user-pack.service';
 import { UserPackDescriptionService } from 'src/app/shared/services/user-pack-description.service';
 import { Products } from 'src/app/shared/products.models';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+
 
   @Component({
     selector: 'app-user-pack-edit',
@@ -17,7 +19,10 @@ import { Products } from 'src/app/shared/products.models';
                 private router:Router,
                 private productService:ProductsService,
                 private userPackageService:UserPackService,
-                private userPackageDescriptionService:UserPackDescriptionService ) { }
+                private userPackageDescriptionService:UserPackDescriptionService,
+                public mdRef:MDBModalService ) { }
+  
+                noClick = new EventEmitter<any>()
   //define selecte item variables
   packageID:string;
   packageName:string;
@@ -160,6 +165,16 @@ import { Products } from 'src/app/shared/products.models';
         totalPricePerItem:this.items.find((x)=>x.productID===y.productID).unitPrice*(y.quantity/100),
       });
     }
+  }
+
+
+  onDeleteClick(){
+    this.userPackageService.removePackage(this.packageID);
+    this.userPackageDescriptionService.removePackageDescription(this.packageID);
+
+
+    // console.log(this.route.snapshot.params['id']);
+    this.router.navigate(['userpacks','userpacklist']);
   }
 
   }

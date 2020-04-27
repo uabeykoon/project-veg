@@ -44,6 +44,15 @@ addUserPackageDescription(packageID,productID,weight){
   this.userPackaDescription.push(new UserPackDescription(packageID,productID,weight));
 }
 
+removePackageDescription(packageID){
+//remove all the existing items regarding to this packageID
+  while(this.userPackaDescription.find((x)=>x.packageID===packageID)){
+    let index =this.userPackaDescription.indexOf(this.userPackaDescription.find((x)=>x.packageID===packageID));
+    this.userPackaDescription.splice(index,1);
+    console.log(index);
+    }
+}
+
 
 updateUserPackageDescription(packageID,newArray){
 //remove all the existing items regarding to this packageID  
