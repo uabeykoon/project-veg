@@ -1,9 +1,9 @@
 <div class="row" style="margin-top: 50px;">
 
-  <mdb-card>
+  <mdb-card class="w-100">
     <mdb-card-body>
 
-      <div class="col-md-12">
+      <div class="col-md-12 w-100">
         <section class="text-center pb-1 my-0">
 
           <h2 class="h1 font-weight-bold ">Special Packages</h2>
@@ -25,7 +25,7 @@
 
               <!-- Card image -->
               <div class="view overlay">
-                <img class="card-img-top img-responsive"
+                <img class="card-img-top img-responsive" style="height: 120px;"
                   src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/powerhouse_vegetables_slideshow/650x350_powerhouse_vegetables_slideshow.jpg"
                   style="max-height: 150px;">
                 <a>
@@ -38,12 +38,11 @@
 
                 <!-- Title -->
                 <hr class="warning-color">
-                <h4 class="card-title green-text">{{card.packageName}}</h4>
-                <p class="card-title">Rs.{{card.price}} /=</p>
+                <h4 class="card-title green-text font-weight-bold" style="height: 25px;">{{card.packageName}}</h4>
+                <p class="card-title" style="height: 30px;">Rs.{{card.price}} /=</p>
                 <hr class="warning-color">
                 <!-- Text -->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card
-                  content</p>
+                <p class="card-text">Click on the Packages to see the items that are included. Special Discounts are added.</p>
                 <!-- Link -->
                 <!-- <a (click)="onViewMoreClicked()" class="black-text d-flex justify-content-end">
                   <h5 class="text-success">View more <i class="fas fa-angle-double-right"></i></h5>

@@ -3,7 +3,7 @@ import { UserPackDescription } from './../../shared/userPackDescription.model';
 import { UserPackService } from './../../shared/services/user-pack.service';
 import { UserPackages } from './../../shared/userPacks.model';
 import { ViewPopUpModelComponent } from './../view-pop-up-model/view-pop-up-model/view-pop-up-model.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -24,11 +24,27 @@ export class UserPackListComponent implements OnInit {
               private route:ActivatedRoute) { }
 
   pp='';
-  modalRef: MDBModalRef; 
+  modalRef: MDBModalRef;
+  
+  size: any = "col-md-3 pb-2";
+
+  innerWidth: any;
+  x: any;
+
+  onc = false;
   
   myPacks: UserPackages[];
 
   myPackDes: UserPackDescription[];
+
+  slides: any = [[]];
+  chunk(arr, chunkSize) {
+    let R = [];
+    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
+    }
+    return R;
+  }
 
 
   ngOnInit(): void {
@@ -36,7 +52,42 @@ export class UserPackListComponent implements OnInit {
     this.myPacks = this.userPackageService.getProducts();
     this.myPackDes = this.userPackDescriptionService.getPackagesDescriptions();
 
+    this.innerWidth =
+      window.innerWidth;
+
+    if (this.innerWidth < 575) {
+      this.slides = this.chunk(this.myPacks, 1);
+      this.onc = true;
+    }
+    if (this.innerWidth >= 575 && this.innerWidth < 768) {
+      this.slides = this.chunk(this.myPacks, 2);
+      this.onc = false;
+    }
+    if (this.innerWidth >= 768) {
+      this.slides = this.chunk(this.myPacks, 4);
+      this.onc = false;
+    }
    
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    this.x = innerWidth + 200;
+
+    if (this.innerWidth < 575) {
+      this.slides = this.chunk(this.myPacks, 1);
+      this.onc = true;
+    }
+    if (this.innerWidth >= 575 && this.innerWidth < 768) {
+      this.slides = this.chunk(this.myPacks, 2);
+      this.onc = false;
+    }
+    if (this.innerWidth >= 768) {
+      this.slides = this.chunk(this.myPacks, 4);
+      this.onc = false;
+    }
+
 
   }
 

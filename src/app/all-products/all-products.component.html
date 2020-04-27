@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row" style="margin-top:15px;">
     <div class="col-md-12">
       <section class="text-center pb-1 my-0">
@@ -8,17 +9,16 @@
       </section>
     </div>
 </div>
-    <mdb-card>
+    <mdb-card class="card  pb-0 rounded w-100">
         <mdb-card-body>
   
           <div class="container">
             <div class="row">
-              <div class="col-md-3 mx-auto my-4" *ngFor="let card of cards">
-                <mdb-card>
+              <div class="mx-auto my-4" *ngFor="let card of cards">
+                <mdb-card class="card text-center pb-0 rounded hoverable">
                   <div class="view overlay">
-                    <img class="card-img-top img-responsive"
-                      [src]="card.imgSrc"
-                      style="max-height: 170px;">
+                    <img class="card-img-top img-responsive" style="height: 150px;"
+                      [src]="card.imgSrc">
                     <a>
                       <div class="mask rgba-white-slight"></div>
                     </a>
@@ -26,11 +26,11 @@
                   <mdb-card-body>
 
                     <mdb-card-title class="text-center">
-                      <h4>{{card.productName}}</h4>
+                      <h4 style="height: 30px;">{{card.productName}}</h4>
                       <hr class="warning-color">
                     </mdb-card-title>
                     
-                    <h4 class="text-center">100g / Rs {{card.unitPrice}}/=</h4>
+                    <h4 class="text-center" >100g / Rs {{card.unitPrice}}/=</h4>
                     <hr class="warning-color">
                     
           
@@ -43,3 +43,4 @@
   
         </mdb-card-body>
     </mdb-card>
+  </div>
