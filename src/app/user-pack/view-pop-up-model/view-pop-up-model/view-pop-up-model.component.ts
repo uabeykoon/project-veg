@@ -27,25 +27,19 @@ export class ViewPopUpModelComponent implements OnInit {
   weight=1;
 
 
-  productList:UserPackDescription[];
+  
   totalAmount:number;
+  specificProductList:UserPackDescription[];
 
   ngOnInit(): void {
-  // get all product description list from the service
-    this.productList=this.userPackDesService.getPackagesDescriptions();
-
   //filter related package description list
-    const specificProductList = this.productList.filter((x)=>{
-      return x.packageID===this.content.packageID;
-  
-    
-    })
+    this.specificProductList = this.userPackDesService.getPackagesDescription(this.content.packageID);
   //get package name
-  this.packageName = this.userPackService.getPackage(this.content.packageID).packageName;
+    this.packageName = this.userPackService.getPackage(this.content.packageID).packageName;
 
   //calculate total amount of pack
     let x = 0;
-    for(const i of specificProductList){
+    for(const i of this.specificProductList){
       let unitPrice=this.productService.getProduct(i.productID).unitPrice;
       let quantity=i.quantity;
       x=x+unitPrice*(quantity/100);

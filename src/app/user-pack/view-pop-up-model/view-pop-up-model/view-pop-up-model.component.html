@@ -7,11 +7,13 @@
   </div>
   
         <div class="modal-body">
-          <div class="row" *ngFor="let listItem of productList | packageDescriptionPipe:content.packageID">
+          <div class="row" *ngFor="let listItem of specificProductList">
             <div class="col-md-12  list-group-item clearfix">
               <div class="float-left">
                 <h2>{{listItem.productID | packageItemNamingPipe}}</h2>
-                <p style="margin-top: 2px;">{{listItem.quantity}}g</p>
+                <p>{{listItem.quantity}}g</p>
+                <p>Rs {{listItem.quantity | packageItemTotalPricePerItemPipe:listItem.productID}}/=</p>
+
               </div>
                 <span class="float-right">
                   <img [src]="listItem.productID | packageItemImagePipe" alt="" style="width: auto;height: 70px;" class="img-responsive">

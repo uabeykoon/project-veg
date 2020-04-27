@@ -48,7 +48,8 @@ import { CartQuantityAndWeightPipePipe } from './shared/pipes/cart-quantity-and-
 import { SignInPopupModalComponent } from './signIn-signUp/signIn-popup-modal/sign-in-popup-modal/sign-in-popup-modal.component';
 import { SignUpPopupModalComponent } from './signIn-signUp/signUp-popup-modal/sign-up-popup-modal/sign-up-popup-modal.component';
 import { OrderConfirmPopupModalComponent } from './cart/oderConfirm-popup-modal/order-confirm-popup-modal/order-confirm-popup-modal.component';
-import { FooterComponent } from './footer/footer/footer.component'; 
+import { FooterComponent } from './footer/footer/footer.component';
+import { PackageItemTotalPricePerItemPipePipe } from './shared/pipes/package-item-total-price-per-item-pipe.pipe'; 
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -85,6 +86,7 @@ import { FooterComponent } from './footer/footer/footer.component';
     SignUpPopupModalComponent,
     OrderConfirmPopupModalComponent,
     FooterComponent,
+    PackageItemTotalPricePerItemPipePipe,
     
     
  

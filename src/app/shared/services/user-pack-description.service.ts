@@ -34,10 +34,10 @@ getPackagesDescriptions(){
   return this.userPackaDescription.slice();
 }
 
-getPackagesDescription(p:any){
+getPackagesDescription(packageID){
 
 
-  return this.userPackaDescription.filter((packageDes)=>p===packageDes.packageID);
+  return this.userPackaDescription.filter((packageDes)=>packageID===packageDes.packageID);
 }
 
 addUserPackageDescription(packageID,productID,weight){
