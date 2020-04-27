@@ -47,14 +47,7 @@ export class AllProductsComponent implements OnInit {
   
     }
 
-    slides: any = [[]];
-  chunk(arr, chunkSize) {
-    let R = [];
-    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
-      R.push(arr.slice(i, i + chunkSize));
-    }
-    return R;
-  }
+
   
     ngOnInit() {
 
@@ -66,45 +59,9 @@ export class AllProductsComponent implements OnInit {
       this.modalService.close.subscribe(() => console.log('close'));
       this.modalService.closed.subscribe(() => console.log('closed'));
 
-      this.innerWidth = 
-    window.innerWidth;
 
-    if(this.innerWidth<575){
-      this.slides = this.chunk(this.cards, 1);
-      this.onc=true;
-    }
-    if(this.innerWidth>=575 && this.innerWidth<768){
-      this.slides = this.chunk(this.cards, 2);
-      this.onc=false;
-    }
-    if(this.innerWidth>=768){
-      this.slides = this.chunk(this.cards, 4);
-      this.onc=false;
-    }
 
     }
-
-    @HostListener('window:resize', ['$event'])
-  onResize(event) {
-  this.innerWidth = window.innerWidth;
-  this.x = innerWidth+200;
-
-  if(this.innerWidth<575){
-    this.slides = this.chunk(this.cards, 1);
-    this.onc=true;
-  }
-  if(this.innerWidth>=575 && this.innerWidth<768){
-    this.slides = this.chunk(this.cards, 2);
-    this.onc=false;
-  }
-  if(this.innerWidth>=768){
-    this.slides = this.chunk(this.cards, 4);
-    this.onc=false;
-  }
-
-
-}
-
 
 
 }
