@@ -66,4 +66,14 @@ export class UserPackListComponent implements OnInit {
     this.router.navigate(['userpacks','create'])
   }
 
+  onEditClick(packageID){
+    this.router.navigate(['userpacks',packageID,'editpack']);
+
+  }
+
+  onDeleteclick(packageID){
+    console.log(packageID);
+    this.modalRef.hide();
+  }
+
 }

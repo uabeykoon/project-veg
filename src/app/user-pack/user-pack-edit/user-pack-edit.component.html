@@ -13,13 +13,24 @@
 
         <div class="container">
             <div class="row">
-
-                <div class="md-form">
-                    <mdb-icon fas icon="cart-arrow-down" class="prefix"></mdb-icon>
-                    <input mdbInput type="text" id="form2" class="form-control" [(ngModel)]="packageName">
-                    <label for="form2">Enter your Package Name</label>
+              <div class="col-md-12">
+                <div class="clearfix">
+                  <div class="float-left">
+                    <div class="md-form">
+                        <mdb-icon fas icon="cart-arrow-down" class="prefix"></mdb-icon>
+                        <input mdbInput type="text" id="form2" class="form-control" [(ngModel)]="packageName">
+                        <label for="form2">Enter your Package Name</label>
+                    </div>
+                  </div>
+                    <div class="float-right">
+                      
+                      <button type="button" mdbBtn color="danger" size="lg" class="waves-light" data-toggle="modal" data-target="#basicExample"
+                      (click)="frame.show()" mdbWavesEffect>DELETE PACK</button>
+                    </div>
                 </div>
-
+              </div>
+            </div>
+            <div class="row">
                 <table mdbTable >
                     <thead class="black white-text">
                       <tr>
@@ -103,5 +114,33 @@
         </div>        
   
     </mdb-card-body>
-</mdb-card>        
+</mdb-card>
+
+
+
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Are you sure?</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <mdb-icon fas icon="times" size="4x" class="animated rotateIn"></mdb-icon>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a (click)="onDeleteClick()" mdbBtn color="danger" outline="true" class="waves-effect"
+          mdbWavesEffect >Yes</a>
+        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect data-dismiss="modal" (click)="frame.hide()">No</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
 

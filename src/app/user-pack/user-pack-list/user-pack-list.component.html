@@ -44,9 +44,11 @@
                   </div>
                 </mdb-card-text>
 
-                <a mdbBtn color="success" mdbWavesEffect (click)="openViewPackageModal(packs.packageID)">View Pack</a>
+                <a mdbBtn color="success" mdbWavesEffect (click)="openViewPackageModal(packs.packageID)">ADD TO CART</a>
                 <!-- <a mdbBtn color="primary"  mdbWavesEffect >Edit</a> -->
-                <a mdbBtn color="success" mdbWavesEffect>Add to Cart</a>
+                <a mdbBtn color="success" mdbWavesEffect (click)="onEditClick(packs.packageID)">EDIT</a>
+
+                
               </mdb-card-body>
             </mdb-card>
 
@@ -69,6 +71,7 @@
                 </mdb-card-text>
 
                 <a mdbBtn color="success" (click)="onCreatClick()" mdbWavesEffect>Create New Pack</a>
+                
 
               </mdb-card-body>
             </mdb-card>
@@ -79,3 +82,7 @@
   </mdb-card>
 
 </div>
+
+
+
+

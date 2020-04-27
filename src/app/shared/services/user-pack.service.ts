@@ -34,6 +34,11 @@ updatePackage(packageID,packageName){
   this.userpackages[ind].packageName=packageName;
 }
 
+removePackage(packageID){
+  let i = this.userpackages.indexOf(this.userpackages.find((x)=>x.packageID===packageID));
+  this.userpackages.splice(i,1);
+}
+
 
 
 }
