@@ -39,7 +39,7 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 
   items:Products[];
   addedItems=[];
-  headElements =   ['No.','Product View' ,'Product name', 'Quantity', 'Price', 'Remove'];
+  headElements =   ['view' ,'name', 'qtn.', 'price', 'remove'];
 
   ngOnInit(): void {
 //get all product array from product service

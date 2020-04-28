@@ -15,6 +15,8 @@ import { UserPackDescriptionService } from 'src/app/shared/services/user-pack-de
 })
 export class UserPackCreateNewComponent implements OnInit {
 
+ 
+
   constructor(private activatedRout:ActivatedRoute,
               private router:Router,
               private productService:ProductsService,
@@ -32,11 +34,9 @@ export class UserPackCreateNewComponent implements OnInit {
   selectedItemTotalPrice:number = 0;
   packTotalPrice=0;
 
-  
-
   items:Products[];
   addedItems=[];
-  headElements =   ['No.','Product View' ,'Product name', 'Quantity', 'Price', 'Remove'];
+  headElements =   ['view' ,'name', 'qtn.', 'price', 'remove'];
 
   ngOnInit(): void {
   //get all product array from product service
