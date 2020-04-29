@@ -50,6 +50,8 @@ import { SignUpPopupModalComponent } from './signIn-signUp/signUp-popup-modal/si
 import { OrderConfirmPopupModalComponent } from './cart/oderConfirm-popup-modal/order-confirm-popup-modal/order-confirm-popup-modal.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { PackageItemTotalPricePerItemPipePipe } from './shared/pipes/package-item-total-price-per-item-pipe.pipe'; 
+import { HttpClientModule } from '@angular/common/http';
+import { from } from 'rxjs';
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -103,7 +105,9 @@ import { PackageItemTotalPricePerItemPipePipe } from './shared/pipes/package-ite
     MatAutocompleteModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
+    
     
   ],
   entryComponents:[ProductPopupModalComponent],

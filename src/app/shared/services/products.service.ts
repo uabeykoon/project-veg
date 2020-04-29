@@ -1,8 +1,13 @@
 import { Products } from '../products.models';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
+@Injectable()
 export class ProductsService{
 
-    private products:Products[] = [
+    productsChanged = new Subject<Products[]>();
+
+    private products :Products[]= [
             new Products('001','Carrot',60,200,'vegetable',true,'https://image.freepik.com/free-photo/bunch-fresh-carrots-white-background_52720-62.jpg'),
             new Products('002','Beet root',70,200,'vegetable',true,'https://images.assetsdelivery.com/compings_v2/buriy/buriy1408/buriy140800037.jpg'),
             new Products('003','Brinjol',90,200,'vegetable',true,'https://img.freepik.com/free-photo/heap-small-eggplant-aubergine_80013-2013.jpg?size=626&ext=jpg'),
@@ -16,6 +21,8 @@ export class ProductsService{
         
     ];
 
+    constructor(){}
+
 
     getProducts(){
         return this.products.slice();
@@ -24,6 +31,12 @@ export class ProductsService{
     
     getProduct(aa:any){
        return this.products.find((product)=>aa===product.productID);
+    }
+
+    setProducts(products:Products[]){
+        this.products=products;
+        console.log(this.products);
+        this.productsChanged.next(this.products.slice());
     }
     
 
