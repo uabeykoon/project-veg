@@ -3,6 +3,7 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { ProductPopupModalComponent } from './product-popup-modal/product-popup-modal.component';
 import { ProductsService } from '../shared/services/products.service';
 import { Products } from '../shared/products.models';
+import { DataStorageService } from '../shared/services/data-storage.service';
 
 @Component({
   selector: 'app-all-products',
@@ -18,7 +19,10 @@ export class AllProductsComponent implements OnInit {
   modalRef: MDBModalRef;
 
   constructor(private modalService: MDBModalService,
-              private productService:ProductsService ) { }
+              private productService:ProductsService ) {
+
+                
+               }
 
   size :any = "col-md-3 pb-2";
 
@@ -50,6 +54,7 @@ export class AllProductsComponent implements OnInit {
 
   
     ngOnInit() {
+      
 
       //get products from product service
     this.cards = this.productService.getProducts();
@@ -62,6 +67,8 @@ export class AllProductsComponent implements OnInit {
 
 
     }
+
+    
 
 
 }
