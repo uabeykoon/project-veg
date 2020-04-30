@@ -52,6 +52,7 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { PackageItemTotalPricePerItemPipePipe } from './shared/pipes/package-item-total-price-per-item-pipe.pipe'; 
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -89,6 +90,7 @@ import { from } from 'rxjs';
     OrderConfirmPopupModalComponent,
     FooterComponent,
     PackageItemTotalPricePerItemPipePipe,
+    MyOrdersComponent,
     
     
  

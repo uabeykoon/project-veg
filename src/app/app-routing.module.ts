@@ -1,3 +1,4 @@
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { CartComponent } from './cart/cart.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'featuredpacks',component:FeaturedPackComponent},
   {path:'contactus',component:ContantUsComponent},
   {path:'cartview',component:CartComponent},
+  {path: 'myorders',component:MyOrdersComponent},
   {path: 'userpacks',component:UserPackComponent ,children:[
     {path:'userpacklist',component:UserPackListComponent},
     {path:':id/viewuserpack',component:UserPackDetailsComponent},

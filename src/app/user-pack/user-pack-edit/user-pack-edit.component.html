@@ -36,18 +36,17 @@
     </div> -->
 
 
-      <div class="card-deck mx-auto">
-        <!-- Card -->
+      <!-- <div class="card-deck mx-auto">
+        Card 
         <mdb-card class="card mx-auto pb-0 rounded" class="my-4">
           <mdb-card-body>
 
-            <!--Text-->
             <mdb-card-text class="text-center">
               <select class="browser-default custom-select" (change)="selectOption($event.target.value)">
                 <option selected>Select Product</option>
                 <option *ngFor="let item of items" [value]="item.productID">{{item.productName}}</option>
               </select>
-              <!-- <div class="row text-center" style="margin-top: 25px;">
+              <<div class="row text-center" style="margin-top: 25px;">
               <button mat-mini-fab class="warning-color " (click)="onMinusClick()">
                 <mdb-icon fas icon="minus" style="color: white;"></mdb-icon>
               </button>
@@ -55,7 +54,7 @@
               <button mat-mini-fab class="warning-color" (click)="onPlusClick()">
                 <mdb-icon fas icon="plus" style="color: white;"></mdb-icon>
               </button>
-            </div> -->
+            </div> 
               <div class="row" style="margin-top: 25px;">
                 <div class="col-3" style="text-align: center;">
                   <button mat-mini-fab class="warning-color" aria-label="Example icon button with a plus one icon"
@@ -83,12 +82,12 @@
             </mdb-card-text>
           </mdb-card-body>
         </mdb-card>
-        <!-- Card -->
+        
 
-      </div>
+      </div> -->
 
       <!-- <div class="table-responsive" style="margin-bottom: 25px;"> -->
-      <!-- <table class="table" >
+      <table class="table" >
                     <thead class="black white-text">
                       <tr>
                         <th>
@@ -99,7 +98,7 @@
                             <option selected>Select Product</option>
                             <option *ngFor="let item of items" [value]="item.productID" >{{item.productName}}</option>
                           </select>
-                            <input mdbInput placeholder="Product name" type="text" id="formproductname" class="form-control">
+                            <!-- <input mdbInput placeholder="Product name" type="text" id="formproductname" class="form-control"> -->
                         </th>
                         <th>
                             <div class="row">
@@ -112,7 +111,7 @@
                                 </button>
                             </div>
                         </th>
-                        <th *ngFor="let item of res">{{item.unitPrice}}</th>
+                        <!-- <th *ngFor="let item of res">{{item.unitPrice}}</th> -->
                         <th><h1>Rs.{{selectedItemTotalPrice}}/=</h1></th>
                         <th>
                             <button mdbBtn type="button" color="success" rounded="true" size="sm" (click) = "addToTable()" mdbWavesEffect>Click to Add</button>
@@ -122,7 +121,7 @@
                     <tbody>
                       
                     </tbody> 
-                </table>  -->
+                </table> 
 
                 <div class="table-responsive " style="margin-top: 25px;">
 
