@@ -14,6 +14,9 @@ import { UserPackCreateNewComponent } from './user-pack/user-pack-create-new/use
 import { AdminComponent } from './admin/admin.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { ProductsAdminComponent } from './admin/products-admin/products-admin.component';
+import { FeaturedpackAdminComponent } from './admin/featuredpack-admin/featuredpack-admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UsersComponent } from './admin/users/users.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -27,9 +30,13 @@ const routes: Routes = [
     {path:':id/viewuserpack',component:UserPackDetailsComponent},
     {path:':id/editpack',component:UserPackEditComponent},
     {path:'create',component:UserPackCreateNewComponent}]},
-  {path:'admin' , component:AdminComponent,children:[
+
+    {path:'admin' , component:AdminComponent,children:[
     {path:'orders',component:OrdersComponent},
-    {path:'productadmin',component:ProductsAdminComponent}
+    {path:'productsadmin',component:ProductsAdminComponent},
+    {path:'dashboard',component:DashboardComponent},
+    {path:'featuredpacksadmin',component:FeaturedpackAdminComponent},
+    {path:'users',component:UsersComponent},
   
   ]}
 ];

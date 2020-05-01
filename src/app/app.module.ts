@@ -53,6 +53,9 @@ import { PackageItemTotalPricePerItemPipePipe } from './shared/pipes/package-ite
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { FeaturedpackAdminComponent } from './admin/featuredpack-admin/featuredpack-admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UsersComponent } from './admin/users/users.component';
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -91,6 +94,9 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
     FooterComponent,
     PackageItemTotalPricePerItemPipePipe,
     MyOrdersComponent,
+    FeaturedpackAdminComponent,
+    DashboardComponent,
+    UsersComponent,
     
     
  
