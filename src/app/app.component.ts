@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { NavbarService } from './shared/services/navbar.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,20 +12,16 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent{
   title = 'project-veg';
-  isAdmin= false;
+  navbarStatus = true;
 
-  constructor(private route:ActivatedRoute,
-    private router:Router){
-    console.log("sss");
-  }
-
-  onActivate(e){
-    e.admin.subscribe((x)=>{
-      if(x==='admin'){
-        this.isAdmin=true;
-      }
+  constructor(private navbarService:NavbarService){
+    this.navbarStatus = navbarService.getNavbarStatus();
+    this.navbarService.navbarStatusChanged.subscribe((newStatus)=>{
+      this.navbarStatus=newStatus;
     });
   }
+
+  
 
   
   
