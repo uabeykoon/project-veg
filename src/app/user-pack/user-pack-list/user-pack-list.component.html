@@ -48,7 +48,7 @@
             </mdb-card>
           </div> -->
 
-          <div class="mx-auto my-4 pb-0 card-deck" *ngFor="let packs of myPacks ; let i = index ">
+          <div class="colm" *ngFor="let packs of myPacks ; let i = index " style="padding: 5px;">
 
             <mdb-card class="card text-center pb-1 rounded hoverable">
               <div class="view overlay waves-light">
@@ -76,11 +76,12 @@
                     </div>
                   </div>
                 </mdb-card-text>
-
-                <a mdbBtn color="success" mdbWavesEffect (click)="openViewPackageModal(packs.packageID)">ADD TO CART</a>
-                <!-- <a mdbBtn color="primary"  mdbWavesEffect >Edit</a> -->
-                <a mdbBtn color="success" mdbWavesEffect (click)="onEditClick(packs.packageID)">EDIT</a>
-
+                
+                  <a mdbBtn color="success" mdbWavesEffect (click)="openViewPackageModal(packs.packageID)"
+                    class="w-100">ADD TO CART</a>
+                  <!-- <a mdbBtn color="primary"  mdbWavesEffect >Edit</a> -->
+                  <a mdbBtn color="success" mdbWavesEffect (click)="onEditClick(packs.packageID)" class="w-100">EDIT</a>
+                
 
               </mdb-card-body>
             </mdb-card>

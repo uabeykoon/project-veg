@@ -16,3 +16,33 @@
         position: relative;
         overflow-y: scroll;
         height: 100px; }
+
+        
+        @media(min-width:100px) and (max-width:576px){
+            .colm {
+                width: 100%;
+            }
+        }
+        
+        @media(min-width:576px) and (max-width:768px){
+            .colm {
+                width: 100%;
+            }
+        }
+
+
+        @media (min-width: 768px) and (max-width: 992px){
+            .colm {
+                width: 50%;
+            }
+        }
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .colm {
+                width: 33%;
+            }
+        }
+        @media (min-width: 1200px) {
+            .colm {
+                width: 25%;
+            }
+        }
