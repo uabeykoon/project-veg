@@ -35,8 +35,6 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
   selectedItemTotalPrice:number = 0;
   packTotalPrice=0;
 
-
-
   items:Products[];
   addedItems=[];
   headElements =   ['view' ,'name', 'qtn.', 'price', 'remove'];
@@ -54,7 +52,6 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
     this.loadExistingItemToDisplayArray();
 //get total price of pack
     this.packTotalPrice=this.calculateTotalPrice(this.addedItems);
-
 
   }
 

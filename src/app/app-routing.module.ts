@@ -1,3 +1,6 @@
+import { FeaturedpackCreateAdminComponent } from './admin/featuredpack-admin/featuredpack-create-admin/featuredpack-create-admin.component';
+import { FeaturedpackEditAdminComponent } from './admin/featuredpack-admin/featuredpack-edit-admin/featuredpack-edit-admin.component';
+import { FeaturedpackListAdminComponent } from './admin/featuredpack-admin/featuredpack-list-admin/featuredpack-list-admin.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { CartComponent } from './cart/cart.component';
 import { NgModule } from '@angular/core';
@@ -20,6 +23,7 @@ import { UsersComponent } from './admin/users/users.component';
 import { ProductListAdminComponent } from './admin/products-admin/product-list-admin/product-list-admin.component';
 import { ProductEditAdminComponent } from './admin/products-admin/product-edit-admin/product-edit-admin.component';
 
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'allproducts',component:AllProductsComponent},
@@ -41,7 +45,14 @@ const routes: Routes = [
     ]},
 
     {path:'dashboard',component:DashboardComponent},
-    {path:'featuredpacksadmin',component:FeaturedpackAdminComponent},
+
+    {path:'featuredpacksadmin',children:[
+
+      {path:'',component:FeaturedpackListAdminComponent},
+      {path:'createpack', component:FeaturedpackCreateAdminComponent},
+      {path:':id/editPack', component:FeaturedpackEditAdminComponent}
+    ]},
+
     {path:'users',component:UsersComponent},
   
   ]}

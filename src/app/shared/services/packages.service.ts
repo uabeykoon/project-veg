@@ -25,5 +25,15 @@ getPackage(p:any){
   return this.packages.find((package1)=>p===package1.packageID);
 }
 
+updatePackage(packageID,packageName){
+  let ind =this.packages.indexOf(this.getPackage(packageID));
+  this.packages[ind].packageName=packageName;
+}
+
+removePackage(packageID){
+  let i = this.packages.indexOf(this.packages.find((x)=>x.packageID===packageID));
+  this.packages.splice(i,1);
+}
+
 
 }
