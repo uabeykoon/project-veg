@@ -15,7 +15,6 @@ import { UserPackDescriptionService } from 'src/app/shared/services/user-pack-de
 })
 export class UserPackCreateNewComponent implements OnInit {
 
- 
 
   constructor(private activatedRout:ActivatedRoute,
               private router:Router,
@@ -45,7 +44,6 @@ export class UserPackCreateNewComponent implements OnInit {
 
   }
   
-
 
   selectOption(ID: string) {
 

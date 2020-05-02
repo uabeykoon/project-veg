@@ -1,23 +1,24 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md-6" >
+        <div class="col-md-6">
             <h2 class="h1 font-weight-bold ">Vegetables</h2>
             <hr class="warning-color">
 
             <div class="row">
                 <div class="clearfix col-12">
-                <button type="button" mdbBtn color="danger" mdbWavesEffect class="float-left"
-                    style="font-size:x-large;width: 35%;">DELETE <mdb-icon fas icon="trash-alt" size="lg"
-                        style="margin-left: 10px;"></mdb-icon></button>
+                    <button type="button" mdbBtn color="danger" mdbWavesEffect class="float-left"
+                        style="font-size:x-large;width: 35%;">DELETE <mdb-icon fas icon="trash-alt" size="lg"
+                            style="margin-left: 10px;"></mdb-icon></button>
 
-                <button type="button" mdbBtn color="default" mdbWavesEffect class="float-right"
-                    style="font-size: x-large; width: 60%;" (click)="onClickEnableEditing()">ENABLE EDITING<mdb-icon size="lg" far icon="edit" style="margin-left: 13px;"> </mdb-icon></button>
+                    <button type="button" mdbBtn color="default" mdbWavesEffect class="float-right"
+                        style="font-size: x-large; width: 60%;" (click)="onClickEnableEditing()">ENABLE EDITING<mdb-icon
+                            size="lg" far icon="edit" style="margin-left: 13px;"> </mdb-icon></button>
                 </div>
             </div>
 
 
-            
+
 
             <div class="row">
                 <img [src]="imgSrc" alt="" class="img-responsive">
@@ -114,16 +115,15 @@
                         <p>Update will change previous states of product according to your changes</p>
                     </div>
                 </div>
-            </div>
 
-            <!--Footer-->
-            <div class="modal-footer justify-content-center">
-                <a type="button" mdbBtn color="info" class="waves-effect" mdbWavesEffect
-                    (click)="onUpdateClick()">Confirm</a>
-                <a type="button" mdbBtn color="info" outline="true" class="waves-effect" mdbWavesEffect
-                    data-dismiss="modal" (click)="frame.hide()">Cancel</a>
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" mdbBtn color="info" class="waves-effect" mdbWavesEffect
+                        (click)="onUpdateClick()">Confirm</a>
+                    <a type="button" mdbBtn color="info" outline="true" class="waves-effect" mdbWavesEffect
+                        data-dismiss="modal" (click)="frame.hide()">Cancel</a>
+                </div>
             </div>
+            <!--/.Content-->
         </div>
-        <!--/.Content-->
     </div>
-</div>
