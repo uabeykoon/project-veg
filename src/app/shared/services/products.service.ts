@@ -38,6 +38,16 @@ export class ProductsService{
         console.log(this.products);
         this.productsChanged.next(this.products.slice());
     }
+
+
+    updateProduct(productID,updatedProductObject){
+        let index = this.products.indexOf(this.products.find(x=>x.productID===productID));
+        this.products[index].productName=updatedProductObject.productName;
+        this.products[index].unitPrice=updatedProductObject.unitPrice;
+        this.products[index].minimumOrder=updatedProductObject.minimumOrder;
+        this.products[index].availability=updatedProductObject.availability;
+        this.products[index].imgSrc=updatedProductObject.imgSrc;
+    }
     
 
 }

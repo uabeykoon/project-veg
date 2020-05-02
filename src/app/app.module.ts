@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule,CardsModule,WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -125,7 +125,10 @@ import { FeaturedpackCreateAdminComponent } from './admin/featuredpack-admin/fea
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    CardsModule,
+    WavesModule, 
+    ButtonsModule
     
     
   ],
