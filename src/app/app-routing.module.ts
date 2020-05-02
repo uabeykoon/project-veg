@@ -17,6 +17,8 @@ import { ProductsAdminComponent } from './admin/products-admin/products-admin.co
 import { FeaturedpackAdminComponent } from './admin/featuredpack-admin/featuredpack-admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UsersComponent } from './admin/users/users.component';
+import { ProductListAdminComponent } from './admin/products-admin/product-list-admin/product-list-admin.component';
+import { ProductEditAdminComponent } from './admin/products-admin/product-edit-admin/product-edit-admin.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -31,9 +33,13 @@ const routes: Routes = [
     {path:':id/editpack',component:UserPackEditComponent},
     {path:'create',component:UserPackCreateNewComponent}]},
 
-    {path:'admin' , component:AdminComponent,children:[
+  {path:'admin' , component:AdminComponent,children:[
     {path:'orders',component:OrdersComponent},
-    {path:'productsadmin',component:ProductsAdminComponent},
+    {path:'productsadmin',children:[
+      {path:'',component:ProductListAdminComponent},
+      {path:':id/editproduct',component:ProductEditAdminComponent},
+    ]},
+
     {path:'dashboard',component:DashboardComponent},
     {path:'featuredpacksadmin',component:FeaturedpackAdminComponent},
     {path:'users',component:UsersComponent},

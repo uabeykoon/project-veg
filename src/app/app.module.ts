@@ -56,6 +56,12 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { FeaturedpackAdminComponent } from './admin/featuredpack-admin/featuredpack-admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UsersComponent } from './admin/users/users.component';
+import { ProductListAdminComponent } from './admin/products-admin/product-list-admin/product-list-admin.component';
+import { ProductEditAdminComponent } from './admin/products-admin/product-edit-admin/product-edit-admin.component';
+import { FeaturedpackListAdminComponent } from './admin/featuredpack-admin/featuredpack-list-admin/featuredpack-list-admin.component';
+import { FeaturedpackEditAdminComponent } from './admin/featuredpack-admin/featuredpack-edit-admin/featuredpack-edit-admin.component';
+import { FeaturedpackCreateAdminComponent } from './admin/featuredpack-admin/featuredpack-create-admin/featuredpack-create-admin.component';
+
 
 
 //import {MMatAutocompleteModule,MatInputModule} from '@angular/material';
@@ -97,6 +103,11 @@ import { UsersComponent } from './admin/users/users.component';
     FeaturedpackAdminComponent,
     DashboardComponent,
     UsersComponent,
+    ProductListAdminComponent,
+    ProductEditAdminComponent,
+    FeaturedpackListAdminComponent,
+    FeaturedpackEditAdminComponent,
+    FeaturedpackCreateAdminComponent,
     
     
  
