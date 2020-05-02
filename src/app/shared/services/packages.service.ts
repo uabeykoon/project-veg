@@ -25,6 +25,10 @@ getPackage(p:any){
   return this.packages.find((package1)=>p===package1.packageID);
 }
 
+addFeaturePackage(packageID,packageName,price,imgsrc){
+  this.packages.push(new Packages(packageID,packageName,price,imgsrc));
+}
+
 updatePackage(packageID,packageName){
   let ind =this.packages.indexOf(this.getPackage(packageID));
   this.packages[ind].packageName=packageName;

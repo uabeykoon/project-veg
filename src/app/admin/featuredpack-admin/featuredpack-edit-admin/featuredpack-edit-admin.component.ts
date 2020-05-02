@@ -153,7 +153,7 @@ export class FeaturedpackEditAdminComponent implements OnInit {
 
   //on confirm click
   onConfirmClick() {
-    this.packageDesservice.updateUserPackageDescription(this.packageID, this.addedItems);
+    this.packageDesservice.updatePackageDescription(this.packageID, this.addedItems);
 
     //update name on
     this.packageservice.updatePackage(this.packageID, this.packageName);

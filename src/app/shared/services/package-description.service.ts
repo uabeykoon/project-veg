@@ -36,7 +36,7 @@ getPackagesDescription(p:any){
   return this.packagesDescription.filter((packageDes)=>p===packageDes.packageID);
 }
 
-addUserPackageDescription(packageID,productID,weight){
+addPackageDescription(packageID,productID,weight){
   this.packagesDescription.push(new PackageDescription(packageID,productID,weight));
 }
 
@@ -52,7 +52,7 @@ removePackageDescription(packageID){
   }
   
   
-  updateUserPackageDescription(packageID,newArray){
+  updatePackageDescription(packageID,newArray){
   //remove all the existing items regarding to this packageID  
     while(this.packagesDescription.find((x)=>x.packageID===packageID)){
       let index =this.packagesDescription.indexOf(this.packagesDescription.find((x)=>x.packageID===packageID));
@@ -64,7 +64,7 @@ removePackageDescription(packageID){
     
   //add updated items to the description array
     for(let x of updatedItem){
-      this.addUserPackageDescription(packageID,x.productID,x.weight);
+      this.addPackageDescription(packageID,x.productID,x.weight);
     }
     
   }
