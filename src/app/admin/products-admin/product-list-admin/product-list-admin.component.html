@@ -3,15 +3,28 @@
         <div class="col-md-12">
             <h2 class="h1 font-weight-bold ">Vegetables</h2>
             <hr class="warning-color">
+            
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="view">
+            <div></div>
+            <div class="mask flex-center rgba-green-strong">
+                <p class="white-text">strong overlay</p>
+            </div>
         </div>
     </div>
 
 
     <div class="row">
+
+        
         <div class="col-md-3" *ngFor="let product of products">
             <a (click)="onClickItem(product.productID)">
                 <div class="row">
-                    <div class="col-md-12  list-group-item clearfix">
+                    <div class="col-md-12  list-group-item clearfix"  [ngClass]="{availability:product.availability===false}">
                         <div class="float-left">
                             <h2>{{product.productName}}</h2>
                             <p>Rs {{product.unitPrice}}/=</p>
