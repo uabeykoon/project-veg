@@ -13,6 +13,11 @@ export class SignInPopupModalComponent implements OnInit {
 
   constructor(public modalRef: MDBModalRef,) { }
 
+  email:String;
+  password:String;
+
+
+
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
       loginFormModalEmail: new FormControl('', Validators.email),
@@ -21,7 +26,9 @@ export class SignInPopupModalComponent implements OnInit {
   }
 
   openSignUp(){
-    // return this.header.openSignUpModal();
+     //return this.header.openSignUpModal();
+     
+    
   }
 
   get loginFormModalEmail() {

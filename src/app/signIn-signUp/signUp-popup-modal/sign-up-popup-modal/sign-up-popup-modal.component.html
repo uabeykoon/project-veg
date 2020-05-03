@@ -10,7 +10,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-          <input type="text" id="orangeForm-name" class="form-control" [formControl]="signupFormModalName"
+          <input type="text" id="orangeForm-name" class="form-control" [(ngModel)]="name" [formControl]="signupFormModalName"
                  mdbInput mdbValidate>
           <label for="orangeForm-name">Your Name</label>
           <mdb-error *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
@@ -23,7 +23,7 @@
         
         <div class="md-form mb-5">
             <mdb-icon fas icon="phone" class="prefix grey-text"></mdb-icon>
-            <input type="number" id="orangeForm-contact" class="form-control" [formControl]="signupFormModalContact"
+            <input type="number" id="orangeForm-contact" [(ngModel)]="conatctnumber" class="form-control" [formControl]="signupFormModalContact"
                    mdbInput mdbValidate>
             <label for="orangeForm-contact">Your Contact Number </label>
             <mdb-error *ngIf="signupFormModalContact.invalid && (signupFormModalContact.dirty || signupFormModalContact.touched)">
@@ -36,7 +36,7 @@
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="home" class="prefix grey-text"></mdb-icon>
-            <input type="text" id="orangeForm-address" class="form-control" [formControl]="signupFormModalAddress"
+            <input type="text" id="orangeForm-address" [(ngModel)]="address" class="form-control" [formControl]="signupFormModalAddress"
                    mdbInput mdbValidate>
             <label for="orangeForm-address">Your Home Address</label>
             <mdb-error *ngIf="signupFormModalAddress.invalid && (signupFormModalAddress.dirty || signupFormModalAddress.touched)">
@@ -50,7 +50,7 @@
 
         <div class="md-form mb-5">
           <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-          <input type="email" id="orangeForm-email" class="form-control" [formControl]="signupFormModalEmail"
+          <input type="email" id="orangeForm-email" [(ngModel)]="email" class="form-control" [formControl]="signupFormModalEmail"
                  mdbInput mdbValidate>
           <label for="orangeForm-email">Enter a email</label>
           <mdb-error
@@ -65,7 +65,7 @@
 
         <div class="md-form mb-4">
           <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
-          <input type="password" id="orangeForm-pass" class="form-control" [formControl]="signupFormModalPassword"
+          <input type="password" id="orangeForm-pass" class="form-control" [(ngModel)]="password" [formControl]="signupFormModalPassword"
                  mdbInput mdbValidate>
           <label for="orangeForm-pass">Enter a password</label>
           <mdb-error
@@ -80,7 +80,7 @@
 
         <div class="md-form mb-4">
           <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
-          <input type="password" id="orangeForm-repass" class="form-control" [formControl]="signupFormModalRePassword"
+          <input type="password" id="orangeForm-repass" [(ngModel)]="repassword" class="form-control" [formControl]="signupFormModalRePassword"
                  mdbInput mdbValidate>
           <label for="orangeForm-repass">Repeat Your password</label>
           <mdb-error
@@ -98,7 +98,7 @@
         <div class="form-group mt-4">
             <mdb-checkbox>I Accept the<a class="green-text font-weight-bold"> Terms and Conditions</a></mdb-checkbox>
           </div>
-        <button mdbBtn color="success" class="waves-light"  mdbWavesEffect>Sign up</button>
+        <button mdbBtn color="success" class="waves-light" (click)= "signUPConfirm()" mdbWavesEffect>Sign up</button>
         <div class="options text-center ">
             <p class="pt-1"> Alerady have an account?  <a class="green-text" (click)= "openSignIn()">  Sign In</a></p>
           </div>

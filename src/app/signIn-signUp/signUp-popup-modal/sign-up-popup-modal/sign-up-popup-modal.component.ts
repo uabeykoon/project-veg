@@ -13,6 +13,13 @@ export class SignUpPopupModalComponent implements OnInit {
 
   constructor(public modalRef: MDBModalRef,) { }
 
+  name:String;
+  conatctnumber:number;
+  address:String;
+  email:string;
+  password:String;
+  repassword:string;
+
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
       signupFormModalName: new FormControl('', Validators.required),
@@ -26,6 +33,10 @@ export class SignUpPopupModalComponent implements OnInit {
 
   openSignIn(){
       
+  }
+
+  signUPConfirm(){
+    //console.log(this.name + " "  + this.email+  " "  +this.password+  " "  +this.repassword+ " "  + this.conatctnumber+" "  +this.address)
   }
 
   get signupFormModalName() {
