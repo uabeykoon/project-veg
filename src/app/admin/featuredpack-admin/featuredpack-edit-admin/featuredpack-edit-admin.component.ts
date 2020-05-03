@@ -34,6 +34,7 @@ export class FeaturedpackEditAdminComponent implements OnInit {
   selectedItemName: string;
   selectedItemImg: string;
   selectedItemUnitPrice: number;
+  selectedproductavailibility:boolean;
 
   selectedItemTotalPrice: number = 0;
   packTotalPrice = 0;
@@ -66,6 +67,7 @@ export class FeaturedpackEditAdminComponent implements OnInit {
     this.selectedItemImg = this.items.find((x) => x.productID === ID).imgSrc;
     this.selectedItemUnitPrice = this.items.find((x) => x.productID === ID).unitPrice;
     this.selectedItemTotalPrice = this.selectedItemUnitPrice * (this.selectedItemweight / 100);
+    this.selectedproductavailibility =this.items.find((x)=>x.productID===ID).availability;
 
   }
 
@@ -107,7 +109,7 @@ export class FeaturedpackEditAdminComponent implements OnInit {
     }
     else {
       //add item object to addeditems array
-      this.addedItems.push({ productID: this.selectedID, productName: this.selectedItemName, imgSrc: this.selectedItemImg, weight: this.selectedItemweight, totalPricePerItem: this.selectedItemTotalPrice });
+      this.addedItems.push({ productID: this.selectedID, productName: this.selectedItemName, imgSrc: this.selectedItemImg, weight: this.selectedItemweight, totalPricePerItem: this.selectedItemTotalPrice,avalibility:this.selectedproductavailibility });
       
       //update total price 
       this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
@@ -163,7 +165,6 @@ export class FeaturedpackEditAdminComponent implements OnInit {
   }
 
 
-
   loadExistingItemToDisplayArray() {
 
     //get package description related to package
@@ -175,6 +176,7 @@ export class FeaturedpackEditAdminComponent implements OnInit {
         productID: y.productID,
         productName: this.items.find((x) => x.productID === y.productID).productName,
         imgSrc: this.items.find((x) => x.productID === y.productID).imgSrc,
+        avalibility:this.items.find((x)=>x.productID=== y.productID).availability,
         weight: y.quantity,
         totalPricePerItem: this.items.find((x) => x.productID === y.productID).unitPrice * (y.quantity / 100),
       });

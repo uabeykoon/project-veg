@@ -21,10 +21,13 @@ export class FeaturedpackCreateAdminComponent implements OnInit {
 
     packageID:string;
     packageName:string;
-    packageDiscount: number;
+    packageDiscount: number=0;
+    givendiscountamount :number=0;
   
     selectedItemweight = 200;
+    selectedproductavailibility:boolean;
     selectedID:string;
+    //avalibility:boolean;
     selectedItemName:string;
     selectedItemImg:string;
     selectedItemUnitPrice:number;
@@ -49,7 +52,7 @@ export class FeaturedpackCreateAdminComponent implements OnInit {
       this.selectedItemImg = this.items.find((x)=>x.productID===ID).imgSrc;
       this.selectedItemUnitPrice = this.items.find((x)=>x.productID===ID).unitPrice;
       this.selectedItemTotalPrice = this.selectedItemUnitPrice*(this.selectedItemweight/100);
-  
+      this.selectedproductavailibility =this.items.find((x)=>x.productID===ID).availability;
     }
   
   
@@ -69,6 +72,12 @@ export class FeaturedpackCreateAdminComponent implements OnInit {
       this.selectedItemTotalPrice = this.selectedItemUnitPrice*(this.selectedItemweight/100);
       }
     }
+
+    calculateDiscount(){
+      this.givendiscountamount =
+      ((this.calculateTotalPrice(this.addedItems)*this.packageDiscount)/100);
+      return this.givendiscountamount;
+    }
   
   
   
@@ -78,14 +87,13 @@ export class FeaturedpackCreateAdminComponent implements OnInit {
         this.addedItems[index].weight=this.addedItems[index].weight+this.selectedItemweight;
         this.addedItems[index].totalPricePerItem=this.addedItems[index].totalPricePerItem+this.selectedItemTotalPrice;
         console.log(index);
-        this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
-       
+        this.packTotalPrice = this.calculateTotalPrice(this.addedItems) - this.calculateDiscount();
       }
       else{
     //add item object to addeditems array
-      this.addedItems.push({productID:this.selectedID,productName:this.selectedItemName,imgSrc:this.selectedItemImg,weight:this.selectedItemweight,totalPricePerItem:this.selectedItemTotalPrice});
+      this.addedItems.push({productID:this.selectedID,productName:this.selectedItemName,imgSrc:this.selectedItemImg,weight:this.selectedItemweight,totalPricePerItem:this.selectedItemTotalPrice, avalibility:this.selectedproductavailibility});
     //update total price 
-          this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
+          this.packTotalPrice = this.calculateTotalPrice(this.addedItems) - this.calculateDiscount();
   
       }
     
@@ -97,7 +105,7 @@ export class FeaturedpackCreateAdminComponent implements OnInit {
       let index = this.addedItems.indexOf(selectedObject);
       this.addedItems.splice(index,1);
     //update total price after removing some item
-      this.packTotalPrice = this.calculateTotalPrice(this.addedItems);
+      this.packTotalPrice = this.calculateTotalPrice(this.addedItems) - this.calculateDiscount();
     }
   
   

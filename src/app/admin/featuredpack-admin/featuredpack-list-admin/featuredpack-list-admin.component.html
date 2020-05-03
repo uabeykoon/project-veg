@@ -11,8 +11,8 @@
     </div>
 
     <div class="row">
-        
-        <div class="colm col-md-3" *ngFor="let pack of packages ; let i = index ">
+
+        <div class="colm col-md-3" *ngFor="let pack of packages ; let i = index " >
 
             <mdb-card class="card pb-0 rounded hoverable" (click)="onClickPack(pack.packageID)">
                 <mdb-card-body cascade="true" class="pb-0">
@@ -28,12 +28,9 @@
                                 <div class="float-right"> {{packDes.quantity}} g</div>
                             </div>
                         </div>
-
                     </mdb-card-text>
-
                 </mdb-card-body>
             </mdb-card>
         </div>
-
     </div>
 </div>
